@@ -19,8 +19,8 @@
 
 ### Hack Coaches<a name="hack-coaches"></a>
 
-- [Contact Person 1](mailto:person1@example.com)
-- [Contact Person 2](mailto:person2@example.com)
+- ![Contact Person 1](path/to/person1.jpg) Contact Person 1 - @slack_username1
+- ![Contact Person 2](path/to/person2.jpg) Contact Person 2 - @slack_username2
 
 ## What do we bring<a name="what-we-provide"></a>
 
