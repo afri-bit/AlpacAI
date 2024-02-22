@@ -139,23 +139,34 @@ See https://www.youtube.com/watch?v=a0cfmOyLeo4
 
 Two of the features which are useful are the one to re-center youself (in case the environment ever is in a weird state) and the recording feature which would be great if you want to record your pitches (....or just for fun and giggles.). Approach our Hack Coaches if you need to retrieve the images and videos recorded from our devices.
 
+As soon as you're ready, find the SDV.Link app icon and tap to launch.
 
-
-
-
-
-
-# The SDV.Link App
+After a while, you should find that the mixed reality environent loads up and you should see the Virtual Car, Virtual Tablet and Virtual Dashboard and Debug Consoles.
 
 ## Getting around the app
 
-
-
 #### Moving around and interacting
 
+In order to get around, simply walk around the scene. The space you're allowed to walk around would be based on how large the boundary or guardian you've set up. 
 
+if you find that you're walking into interesting areas of the XR scene and they disappear (you should see a virtual wall before that happens), you would need to define a larger boundary.
+
+XXX GUARDIAN WALL XXXX
+
+Various objects can be directly interacted with. (For example the Virtual Tablet, Logos, the car doors and trunks). At this point, you should be able to see a "ghost" virtual hand overlaid on your own. You can just reach out and grab or use your finger to press/tap on elements of the scene.
+
+XXX IMAGE VIRTUAL HANDS XXX
+
+#### The Virtual Console
+
+The Virtual Console is located on the left and shows every pertinent messages during the running of the app. You can see any VSS signals coming in or going out, error messages or notifications. 
+
+XXX IMAGE VIRTUAL CONSOLE XXX
 
 #### The Virtual Tablet
+
+The Virtual tablet is a very useful and important tool. Its the interface to working with some of the feature of the scene.
+One of the most important is to connect/initiate a connection to the 
 
 ##### Configuring and Connecting to your broker
 
