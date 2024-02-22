@@ -24,27 +24,27 @@ XXX IMAGE OF CAR AND CITY XXX
 
 So here is what is provided for you in order to take advantage of the SDV.Link app.
 
-XIMAGE: ARCHITECTURE DIAGRAMX
+XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX. 
 
-XXX APP ICON XXX
+XXX IMAGE APP ICON XXX
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
 
-XXX SCREENSHOT APP XXX
+XXX IMAGE SCREENSHOT APP XXX
 
 **Fetch.AI Cloud and Local Agent**
 This is a pair of agents (One running on Fetch.AI and its DeltaV service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via DeltaV, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
 
-XXX DELTAV SCREENSHOT XXX
+XXX IMAGE DELTAV SCREENSHOT XXX
 
 **Smart Contracts**
 There are some points in the Virtual City where it emits signals in order to perform payments. Maybe you can write a payment Smart Contract? Or maybe tap on the various other signals instead? (e.g. if the car breaks down, make a payment to a towing company and send for help!)
 
-XXX VIRTUAL CITY PAYMENT RESPONSE VIZ XXX
+XXX IMAGE VIRTUAL CITY PAYMENT RESPONSE VIZ XXX
 
 **The SDV Technology Stack**
 This is a sizeable amount of frameworks and tools for you to write your applications such as Velocitas, Kuksa, Kuksa SDKs
@@ -64,7 +64,7 @@ Depending on what you want or need you might want to refer to our other document
 
 Kuksa has also non-python SDKs available. If that's your poison, knock yourself out!
 
-X LINKS X
+XXX LINKS XXX
 
 ## Running a compatible stack or server (e.g. Kuksa DataBroker) 
 
@@ -196,7 +196,11 @@ One of the most important is to connect/initiate a connection to the
 
 ##### Supported Signals by SDV.Link
 
-
+| Signal | Used in | What it does |
+| ------ | ------- | ------------ |
+|        |         |              |
+|        |         |              |
+|        |         |              |
 
 
 
@@ -207,4 +211,12 @@ One of the most important is to connect/initiate a connection to the
 
 
 ## SmartContract Integration
+
+
+
+
+
+# Other Stuff
+
+#### Signing up and Setting up Fetch,AI ####
 
