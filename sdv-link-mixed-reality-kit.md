@@ -109,15 +109,35 @@ Some useful commands you can use with Kuksa Client
 
 
 
-### Grab your VR and Set up the Guardian
+### Grab your VR and Set up the Guardian/Boundary
 
 Now that you've your broker up, let's get on with the fun stuff!
 
-Find a VR headset at BCX.
+Find a VR headset at BCX and put it on!
+
+To get the best comfort, you might need to adjust the Inter-pupiliary Distance (IPD) so as to get the best comfort for your eyes.
+
+Next, you will need to specify a Guardian. A Guardian is basically a virtual area which you can specify so that the XR app can show the virtual environment in and by which you can walk around. It also ensures that you're within this area and that you don't walk out of it for safety reasons.
+
+Take a look here or find one of our Hack Coaches if you need an assist.
+
+https://www.meta.com/en-gb/help/quest/articles/in-vr-experiences/oculus-features/boundary/
+
+XXX NOTE: ALWSYS BE CAREFUL AND AWARE OF YOUR SURROUNDINGS. It would be great if you have a buddy who is also watching over you XXX
 
 ## Run the SDV.Link App
 
-In your VR headset, launch the 
+When you're golden with the Guardian/Boundary, it's time to launch the app.
+
+Since the app supports 100% hand-tracked controls, you don't need the Meta Quest controllers. So you can put that away.
+
+#### The Oculus Menu ####
+
+A useful function to take note of is the ubiquitous Oculus Menu. Its a menu which has some basic functions which could be useful.
+
+See https://www.youtube.com/watch?v=a0cfmOyLeo4
+
+Two of the features which are useful are the one to re-center youself (in case the environment ever is in a weird state) and the recording feature which would be great if you want to record your pitches (....or just for fun and giggles.). Approach our Hack Coaches if you need to retrieve the images and videos recorded from our devices.
 
 
 
