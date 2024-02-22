@@ -1,8 +1,8 @@
 # SDV.Link Mixed Reality Kit
 
-XIMAGE:SPLASHX
 
-## Introduction
+
+## Introduction![CoverImageSafeAreaTemplateHero](D:\Projects\ZubairHamed\SDV_GettingStarted\img\CoverImageSafeAreaTemplateHero.png)
 
 The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
 
@@ -14,7 +14,7 @@ XXX VIDEO AND IMAGES OF SDV.LINK XXX
 
 ## What does it do and how does it work?
 
-With SDV.Link, you are able to write applications based on Covesa and VSS signals. Applications emitting supported signals (listed below) can manipulate and visualize both the Virtual Car and how it works around the Virtual City. 
+With SDV.Link, you are able to write applications based on Covesa and VSS signals. Applications emitting supported signals (listed below) can manipulate and visualize both the Virtual Car and how it works around the Virtual City.
 
 Interacting with the Virtual Car (e.g. opening doors, toggling switches, collisions to builidngs etc) also emits VSS signals so that your applications can react to these signals and write your use-cases.
 
@@ -27,9 +27,9 @@ So here is what is provided for you in order to take advantage of the SDV.Link a
 XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 
 **The SDV.Link App**
-The Mixed Reality application which runs on our headsets available at BCX. 
+The Mixed Reality application which runs on our headsets available at BCX.
 
-XXX IMAGE APP ICON XXX
+![CoverImageSafeAreaTemplateLandscape](D:\Projects\ZubairHamed\SDV_GettingStarted\img\CoverImageSafeAreaTemplateLandscape.png)
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
@@ -66,7 +66,7 @@ Kuksa has also non-python SDKs available. If that's your poison, knock yourself 
 
 XXX LINKS XXX
 
-## Running a compatible stack or server (e.g. Kuksa DataBroker) 
+## Running a compatible stack or server (e.g. Kuksa DataBroker)
 
 The simplest way? Install docker and run the following command.
 
@@ -74,7 +74,7 @@ docker pull ghcr.io/eclipse/kuksa.val/databroker:0.4.1
 
 Then run the container, exposing and mapping to port 55555
 
-You can also deploy the container to any cloud Docker services (e.g. Azure Container Instances). 
+You can also deploy the container to any cloud Docker services (e.g. Azure Container Instances).
 
 If you're running one of our prebuilt setups  (e.g via Eclipse Leda, etc), you are already running a Kuksa Databroker. You can reuse this.
 
@@ -147,7 +147,7 @@ After a while, you should find that the mixed reality environent loads up and yo
 
 #### Moving around and interacting
 
-In order to get around, simply walk around the scene. The space you're allowed to walk around would be based on how large the boundary or guardian you've set up. 
+In order to get around, simply walk around the scene. The space you're allowed to walk around would be based on how large the boundary or guardian you've set up.
 
 if you find that you're walking into interesting areas of the XR scene and they disappear (you should see a virtual wall before that happens), you would need to define a larger boundary.
 
@@ -159,38 +159,94 @@ XXX IMAGE VIRTUAL HANDS XXX
 
 #### The Virtual Console
 
-The Virtual Console is located on the left and shows every pertinent messages during the running of the app. You can see any VSS signals coming in or going out, error messages or notifications. 
+The Virtual Console is located on the left and shows every pertinent messages during the running of the app. You can see any VSS signals coming in or going out, error messages or notifications.
 
 XXX IMAGE VIRTUAL CONSOLE XXX
 
 #### The Virtual Tablet
 
 The Virtual tablet is a very useful and important tool. Its the interface to working with some of the feature of the scene.
-One of the most important is to connect/initiate a connection to the 
+One of the most important is to connect/initiate a connection to the data broker.
+
+The same Virtual Tablet interface can also be found within the Virtual Car's HMI dashboard.
 
 ##### Configuring and Connecting to your broker
 
+XXX IMAGE TABLET XXX
 
+Tap on Configure DataBroker and then tap on the hostname field. You should see a virtual keyboard pop up.
+
+Fill in with your databroker host and port (typically 55555) and then hit save and then connect.
+
+In case you do not have a databroker up yet, you can click on the Test Demo Databroker button to try out the app with our test cloud databroker.
+
+Be warned though, the test databroker is not designed for multiuser use. So if multiple users use the broker at the same time, its inevitable that weird stuff will happen :)
+
+If you successfully connect to the databroker, you should see the Debug Console showing success
+
+XXX IMAGE DEVELOPER CONSOLE XXXX
+
+##### Move Scene
+
+If when SDV.Link starts up, perhaps the scene is not in the right place. You can use the Move Scene arrows to fine tune where you'd like the scene to be
+
+XXX IMAGE MOVE SCENE XXX
+
+##### Toggle City/Car
+
+The Virtual Car is not the only feature of SDV.Link. The Toggle City/Car Mode button allows you to switch between the Virtual Car and a Mini City which contains a miniaturized version of the Virtual Car which you can use to control, drive around etc
+
+XXX IMAGE CITY XXX
+
+##### Weather Conditions
+
+This feature allows you to simulate the weather conditions switching between the various weather conditions.
+
+SDV.Link periodically emits the following values which is influenced by the Weather Conditions Set
+
+>TODO Weather Signals
+
+##### Clear Debug Console
+
+Pretty much what it says. Clears the Virtual Debug Console.
 
 #### The Virtual Car
 
+The Virtual car is a lifesized virtual vehicle you can work with. It is aware of various VSS signals.
 
+For example, an incoming XXX TODO DOOR OPEN XXX signal with a value of True would trigger the door to be open.
 
+However, if the door of the vehicle is closed and you open the door in the XR space, it emits the same signal as True to your applications.
 
+##### Features of the Virtual Cars
+
+Doors
+
+Hood
+
+Trunk
+
+Fuel Port
+
+Steering Wheel
+
+Engine Start/Stop
+
+NOTE: SDV.Link provides SOME level of logic for functionalities (e.g. when you open the door, it emits the signal) but the behaviour of the car should largely come from applications and services. (i.e. your apps)
 
 #### The Virtual City
 
+The Virtual City is a mini virtual city which contains features such as  a miniaturized version of the Virtual Car.
 
+Given the right signals, you can steer the mini car across the city.
+
+As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.
+
+> TODO: Signal emitted
 
 
 
 # Writing SDV Apps
-
-## The SDV.Link Companion App
-
-
-
-
 
 ### Writing Kuksa/Velocitas etc apps
 
@@ -206,17 +262,6 @@ One of the most important is to connect/initiate a connection to the
 
 ## Fetch.AI and DeltaV Integration
 
+Fetch.ai is a technology company and platform designed for the AI economy. It offers tools to build, deploy, and monetize AI services. The platform enables the transformation of legacy systems for AI readiness without altering existing APIs and facilitates the discovery of services on an AI Agent network. Fetch.ai also connects multiple integrations to create new services and allows users to access these services through a single prompt.
 
-
-
-
-## SmartContract Integration
-
-
-
-
-
-# Other Stuff
-
-#### Signing up and Setting up Fetch,AI ####
-
+DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/login
