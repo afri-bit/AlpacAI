@@ -250,15 +250,50 @@ As the car moves, a down-scaled version of GPS of the mini city is also emitted 
 
 ### Writing Kuksa/Velocitas etc apps
 
+You can find a reference to the Kuksa VSS Specs over here if you need a more detailed description of signals
+https://covesa.github.io/vehicle_signal_specification/
+
 ##### Supported Signals by SDV.Link
 
-| Signal | Used in | What it does |
-| ------ | ------- | ------------ |
-|        |         |              |
-|        |         |              |
-|        |         |              |
-
-
+| Signal                                                     | Type  | Default Value |
+| ---------------------------------------------------------- | ----- | ------------- |
+| Vehicle.Speed                                              | float | 0.0           |
+| Vehicle.TripMeterReading                                   | float | 0.0           |
+| Vehicle.TraveledDistance                                   | float | 0.0           |
+| Vehicle.Driver.Identifier.Subject                          |       | "Not Defined" |
+| Vehicle.Driver.Identifier.Issuer                           |       | "Not Defined" |
+| Vehicle.VehicleIdentification.VIN                          |       | "Not Defined" |
+| Vehicle.Exterior.AirTemperature                            |       | 0.0           |
+| Vehicle.Exterior.Humidity                                  |       | 0.0           |
+| Vehicle.Exterior.LightIntensity                            |       | 0.0           |
+| Vehicle.Body.Trunk.Rear.IsOpen                             |       | False         |
+| Vehicle.Body.Trunk.Front.IsOpen                            |       | False         |
+| Vehicle.Body.Lights.Beam.High.IsOn                         |       | False         |
+| Vehicle.Body.Lights.Beam.Low.IsOn                          |       | False         |
+| "Vehicle.Body.Lights.DirectionIndicator.Left.IsSignaling   |       | False         |
+| Vehicle.Body.Lights.DirectionIndicator.Right.IsSignaling   |       | False         |
+| Vehicle.Body.Lights.Brake.IsActive                         |       | False         |
+| Vehicle.Body.Lights.Backup.IsOn                            |       | False         |
+| Vehicle.Body.Lights.Fog.Front.IsOn                         |       | False         |
+| Vehicle.Cabin.Door.Row1.DriverSide.IsOpen                  |       | False         |
+| Vehicle.Cabin.Seat.Row1.DriverSide.Position                |       | False         |
+| Vehicle.Cabin.Seat.Row1.DriverSide.Tilt                    |       | 0,0           |
+| Vehicle.Cabin.Door.Row1.PassengerSide.IsOpen               |       | False         |
+| Vehicle.Cabin.Seat.Row1.PassengerSide.Position             |       | 0,0           |
+| Vehicle.Cabin.Seat.Row1.PassengerSide.Tilt                 |       | 0,0           |
+| Vehicle.Cabin.Seat.Row1.PassengerSide.Tilt                 |       | 0,0           |
+| Vehicle.Cabin.Seat.Row1.PassengerSide.Tilt                 |       | 0,0           |
+| Vehicle.Cabin.Door.Row2.DriverSide.IsOpen                  |       | 0,0           |
+| Vehicle.Cabin.Door.Row2.PassengerSide.IsOpen               |       | False         |
+| Vehicle.Powertrain.TractionBattery.Charging.ChargePortFlap |       | "CLOSED"      |
+| Vehicle.Powertrain.CombustionEngine.Speed                  |       | 0,0           |
+| Vehicle.Powertrain.Transmission.CurrentGear                |       | 126           |
+| Vehicle.Powertrain.FuelSystem.RelativeLevel                |       | 0,0           |
+| Vehicle.Powertrain.FuelSystem.IsFuelLevelLow               |       | False         |
+| Vehicle.Powertrain.CombustionEngine.IsRunning              |       | False         |
+| Vehicle.Chassis.SteeringWheel.Angle                        |       | 0,0           |
+| Vehicle.IsBrokenDown                                       |       | False         |
+| Vehicle.Chassis.Axle.Row1.SteeringAngle                    |       | 0,0           |
 
 ## Fetch.AI and DeltaV Integration
 
