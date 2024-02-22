@@ -2,7 +2,9 @@
 
 
 
-## Introduction![CoverImageSafeAreaTemplateHero](D:\Projects\ZubairHamed\SDV_GettingStarted\img\CoverImageSafeAreaTemplateHero.png)
+## Introduction
+
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/CoverImageSafeAreaTemplateHero.png?token=GHSAT0AAAAAACMLLRNX7UCL77AFDXE3J5MOZOXQZKA)
 
 The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
 
@@ -29,7 +31,7 @@ XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX.
 
-![CoverImageSafeAreaTemplateLandscape](D:\Projects\ZubairHamed\SDV_GettingStarted\img\CoverImageSafeAreaTemplateLandscape.png)
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/CoverImageSafeAreaTemplateLandscape.png?token=GHSAT0AAAAAACMLLRNWILJFTYOLFGV6PIYWZOXQ2CQ)
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
