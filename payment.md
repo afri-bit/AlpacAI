@@ -52,7 +52,7 @@ We have the Ethereum Besu network ready for use (Thanks to IBM for provding the 
 
 - JSON-RPC HTTP service endpoint: http://158.177.1.17:8545
 - JSON-RPC WebSocket service endpoint: ws://158.177.1.17:8546
-- Web block explorer address: http://158.177.1.17/25000/explorer/nodes
+- Web block explorer address: http://158.177.1.17:25000/explorer/nodes
 
 or you can deploy your own Blockchain node using : [Quorum Dev Quickstart](https://github.com/Consensys/quorum-dev-quickstart/tree/master)
 
