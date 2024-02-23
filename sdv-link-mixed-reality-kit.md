@@ -44,6 +44,7 @@ XXX IMAGE DELTAV SCREENSHOT XXX
 **Smart Contracts**
 There are some points in the Virtual City where it emits signals in order to perform payments. Maybe you can write a payment Smart Contract? Or maybe tap on the various other signals instead? (e.g. if the car breaks down, make a payment to a towing company and send for help!)
 
+For more information about Smart Contract use case: [Payment Use Case](./payment.md.md)
 
 
 XXX IMAGE VIRTUAL CITY PAYMENT RESPONSE VIZ XXX
