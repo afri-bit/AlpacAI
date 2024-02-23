@@ -1,9 +1,9 @@
-# Virtual City Payment
+# Payment
 
 
 ## Introduction
 
-This README file serves as a guide for participants of the Hackathon project. It provides an overview of the project's purpose and functionality, as well as guidelines for implementing a payment use case using Blockchain.
+This file serves as a guide for participants of the Hackathon project. It provides an overview of the project's purpose and functionality, as well as guidelines for implementing a payment use case using Blockchain.
 
 ## Project Description
 
@@ -37,7 +37,14 @@ To implement the payment use case, participants should follow these steps:
 6. **Presentation**: Prepare a presentation that highlights the key features and benefits of the payment use case. Include a demo of the application in action and explain how it addresses the challenges of secure and transparent transactions in a Virtual City Metaverse.
 
 
-
+## To run the code:
+1. Clone the Python source code from this repo: https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/local-agent-payment
+2. Go to local-agent-payment folder: `cd fetchai-kuksa-agent/local-agent-payment`
+3. Create new python enviroment: `python3 -m venv .venv`
+5. Activate the new enviroment: `source .venv/bin/activate`
+6. Install dependancies: `pip install -r requirements.txt`
+7. Run the code: `python agent-payment.py`
+8. At this point, the code will connect to Virtual City Kuksa Data broker (hosted on Cloud) and start receiving signals
 
 ## Blockchain Infrastructure:
 
@@ -47,9 +54,12 @@ We have the Ethereum Besu network ready for use (Thanks to IBM for provding the 
 - JSON-RPC WebSocket service endpoint: ws://158.177.1.17:8546
 - Web block explorer address: http://158.177.1.17/25000/explorer/nodes
 
+or you can deploy your own Blockchain node using : [Quorum Dev Quickstart](https://github.com/Consensys/quorum-dev-quickstart/tree/master)
 
 ### Wallets: 
-You can use the following Wallets to deploy and test: 
+The following wallets are available for deployment and testing: 
+
+
 ```json
 "0xfe3b557e8fb62b89f4916b721be55ceb828dbd73" : {
 		"privateKey" : "0x8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63",
@@ -80,5 +90,6 @@ You can use the following Wallets to deploy and test:
 
  Use Web3.py for calling smart contracts from the Python project. Web3.py is a Python library that provides easy-to-use interfaces for interacting with Ethereum-based blockchains.
 
+## Conclusion
 
-
+The Hackathon project presents an opportunity to explore the potential of Blockchain technology in facilitating secure and transparent transactions for vehicle-related services. By leveraging the signals from the Kuksa data broker and implementing a payment use case, participants can showcase innovative solutions that have real-world applications in the automotive industry. Good luck!
