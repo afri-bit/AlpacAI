@@ -44,6 +44,8 @@ XXX IMAGE DELTAV SCREENSHOT XXX
 **Smart Contracts**
 There are some points in the Virtual City where it emits signals in order to perform payments. Maybe you can write a payment Smart Contract? Or maybe tap on the various other signals instead? (e.g. if the car breaks down, make a payment to a towing company and send for help!)
 
+
+
 XXX IMAGE VIRTUAL CITY PAYMENT RESPONSE VIZ XXX
 
 **The SDV Technology Stack**
@@ -242,9 +244,12 @@ Given the right signals, you can steer the mini car across the city.
 
 As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.
 
-> TODO: Signal emitted
 
 
+| Signal                                                     | Type   | Payload			 														  	 | Trigger Point																					|
+| ---------------------------------------------------------- | -----  | -------------------------------------------- | ------------------------------------------------------ |
+| Vehicle.VehicleIdentification.VehicleSpecialUsage					 | String |>>> \|\${tx-date}\|${DriverId}\|Fuel\|\${liter}        | As soon as the vehicle left the Fuel Station           |
+|																														 | String |>>> \|\${tx-date}\|${DriverId}\|Parking\|\${duration}  | As soon as the vehicle left the Parking                | 
 
 # Writing SDV Apps
 
@@ -294,6 +299,8 @@ https://covesa.github.io/vehicle_signal_specification/
 | Vehicle.Chassis.SteeringWheel.Angle                        |       | 0,0           |
 | Vehicle.IsBrokenDown                                       |       | False         |
 | Vehicle.Chassis.Axle.Row1.SteeringAngle                    |       | 0,0           |
+| Vehicle.VehicleIdentification.VehicleSpecialUsage					 |String | ""						 |
+ 
 
 ## Fetch.AI and DeltaV Integration
 
