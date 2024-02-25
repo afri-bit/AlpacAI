@@ -28,7 +28,7 @@ SDV combines a number of technologies and open source projects around the idea o
 
 - [Eclipse Kuksa data broker](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker)
 - [Vehicle Signal Specification (VSS)](https://covesa.github.io/vehicle_signal_specification/)
-- VR Simulation of a single vehicle (see [Unity-XR-Template](https://github.com/Bosch-ConnectedExperience-2024/BD-BCX-Unity-XR-Template) for more details)
+- VR Simulation of a single vehicle (see [SDV.Link Mixed Reality Kit](sdv-link-mixed-reality-kit.md) for more details)
 - VR simulation of a city
 - real moveable car seat
 
