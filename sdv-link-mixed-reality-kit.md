@@ -1,11 +1,6 @@
 # SDV.Link Mixed Reality Kit
 
-
-
 ## Introduction
-
-
-
 <img src="img/sdvlink-cover1.png" width="auto" height="300" />
 
 The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
@@ -35,8 +30,6 @@ The Mixed Reality application which runs on our headsets available at BCX.
 
 <img src="img/sdvlink-screen1.jpg" width="auto" height="900" />
 
-
-
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
 
@@ -62,7 +55,6 @@ We provide, for example an actuating Smart Seat. The seat provides a Seat Servic
 We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below: 
 
 XXX TODO LINK TO VSS TABLE XXX
-
 
 ## Getting up and running
 
