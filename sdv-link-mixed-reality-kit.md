@@ -9,17 +9,13 @@ It is a controller-free application which visualizes and virtualizes a Virtual C
 
 You're provided with an immersive environment with which you can develop car apps in lieu of an actual physical vehicle.
 
-![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4)
-
-
-
 ## What does it do and how does it work?
 
 With SDV.Link, you are able to write applications based on Covesa and VSS signals. Applications emitting supported signals (listed below) can manipulate and visualize both the Virtual Car and how it works around the Virtual City.
 
 Interacting with the Virtual Car (e.g. opening doors, toggling switches, collisions to builidngs etc) also emits VSS signals so that your applications can react to these signals and write your use-cases.
 
-<img align="center" src="img/sdvlink-screen3.jpg" width="auto" height="400" />
+![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4)
 
 ## Is that all? What else is provided? What can i do with these?
 
