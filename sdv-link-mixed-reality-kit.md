@@ -9,7 +9,9 @@ It is a controller-free application which visualizes and virtualizes a Virtual C
 
 You're provided with an immersive environment with which you can develop car apps in lieu of an actual physical vehicle.
 
-<video src="https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4" height="700"></video>
+![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4)
+
+
 
 ## What does it do and how does it work?
 
@@ -28,7 +30,7 @@ XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX.
 
-<img src="img/sdvlink-screen1.jpg" width="auto" height="400" />
+<img src="img/sdvlink-screen1.jpg" width="auto" height="650" />
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
@@ -38,7 +40,7 @@ XXX IMAGE CAR CONTROL XXX
 **Fetch.AI Cloud and Local Agent**
 This is a pair of agents (One running on Fetch.AI and its DeltaV service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via DeltaV, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
 
-XXX IMAGE DELTAV SCREENSHOT XXX
+<img src="img/deltav-screenshot.png" width="auto" height="600" />
 
 **Smart Contracts**
 There are some points in the Virtual City where it emits signals in order to perform payments. Maybe you can write a payment Smart Contract? Or maybe tap on the various other signals instead? (e.g. if the car breaks down, make a payment to a towing company and send for help!)
@@ -159,18 +161,18 @@ Various objects can be directly interacted with. (For example the Virtual Tablet
 
 
 
-<img src="img/sdvlink-screen6.jpg" width="auto" height="400" />
+<img src="img/sdvlink-screen6.jpg" width="auto" height="650" />
 
 #### The Virtual Tablet
 
 The Virtual tablet is a very useful and important tool. Its the interface to working with some of the feature of the scene.
 One of the most important is to connect/initiate a connection to the data broker.
 
-The same Virtual Tablet interface can also be found within the Virtual Car's HMI dashboard.
+You can use either your left or right hand to grab the edges of the tablet and a finger tap to tap on buttons.
+
+<img src="img/image-20240222183946936.png" height="500" />
 
 ##### Configuring and Connecting to your broker
-
-<img src="img/image-20240222183946936.png" height="400" />
 
 Tap on Configure DataBroker and then tap on the hostname field. You should see a virtual keyboard pop up.
 
@@ -182,23 +184,23 @@ Be warned though, the test databroker is not designed for multiuser use. So if m
 
 If you successfully connect to the databroker, you should see the Debug Console showing success
 
-XXX IMAGE DEVELOPER CONSOLE XXXX
+<img src="img/sdvlink-broker.jpg" width="auto" height="650" />
 
 ##### Move Scene
 
 If when SDV.Link starts up, perhaps the scene is not in the right place. You can use the Move Scene arrows to fine tune where you'd like the scene to be
 
-XXX IMAGE MOVE SCENE XXX
+<img src="img/sdvlink-move.jpg" width="auto" height="650" />
 
 ##### Toggle City/Car
 
 The Virtual Car is not the only feature of SDV.Link. The Toggle City/Car Mode button allows you to switch between the Virtual Car and a Mini City which contains a miniaturized version of the Virtual Car which you can use to control, drive around etc
 
-XXX SCREENSHOT CAR MODE XXX
+<img src="img/sdvlink-toggle1.jpg" width="auto" height="650" />
+
+<img src="img/sdvlink-toggle2.jpg" width="auto" height="650" />
 
   
-
-<img src="img/sdvlink-screen3.jpg" width="auto" height="400" />
 
 ##### Weather Conditions
 
@@ -206,7 +208,7 @@ This feature allows you to simulate the weather conditions switching between the
 
 SDV.Link periodically emits the following values which is influenced by the Weather Conditions Set
 
-XXX SCREENSHOT WEATHER XXX
+<img src="img/sdvlink-weather.jpg" width="auto" height="650" />
 
 >TODO Weather Signals
 
@@ -244,7 +246,7 @@ The Virtual City is a mini virtual city which contains features such as  a minia
 
 Given the right signals, you can steer the mini car across the city.
 
-<img src="img/sdvlink-screen3.jpg" width="auto" height="400" />
+<img src="img/sdvlink-screen3.jpg" width="auto" height="650" />
 
 As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.\
 
@@ -301,7 +303,8 @@ https://covesa.github.io/vehicle_signal_specification/
 
 ## Fetch.AI and DeltaV Integration
 
-<img src="img/sdvlink-screen3.jpg" width="auto" height="400" />
+XXX FETCHAI LOGO XXX
+
 Fetch.ai is a technology company and platform designed for the AI economy. It offers tools to build, deploy, and monetize AI services. The platform enables the transformation of legacy systems for AI readiness without altering existing APIs and facilitates the discovery of services on an AI Agent network. Fetch.ai also connects multiple integrations to create new services and allows users to access these services through a single prompt.
 
 DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/login
@@ -309,5 +312,7 @@ DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end inter
 ### SDV.Link and Fetch.AI
 
 Provided in the repository XXX TODO REPO LINK XXX is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+
+<img src="img/deltav-screenshot.png" width="auto" height="600" />
 
 ### Configuring and Deploying Fetch.AI Agents
