@@ -16,7 +16,6 @@ You're provided with an immersive environment with which you can develop car app
 
 <video src="img/sdvlink-video1.mp4" height="700" />
 
-
 ## What does it do and how does it work?
 
 With SDV.Link, you are able to write applications based on Covesa and VSS signals. Applications emitting supported signals (listed below) can manipulate and visualize both the Virtual Car and how it works around the Virtual City.
