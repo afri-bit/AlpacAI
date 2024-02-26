@@ -31,7 +31,9 @@ The Mixed Reality application which runs on our headsets available at BCX.
 **SDV.Link Car Control**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. 
 
-This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
+This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!
+
+You can check out the source code to this here: https://github.com/zubairhamed/kuksa-sdvlink-companion-control
 
 <img align="center" src="img/sdvlink-car-control.png" width="auto" height="650" />
 
@@ -55,9 +57,7 @@ This is a sizeable amount of frameworks and tools for you to write your applicat
 
 We provide, for example an actuating Smart Seat. The seat provides a Seat Service which you can develop apps against. Our Virtual car also has seats which are moveable, so you can have the seat move in the real and virtual at the same time. Imagine the next cool Passenger Welcome Use-case?
 
-We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below. 
-
-XXX TODO LINK TO VSS TABLE XXX
+We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below.  [Supported Signals by SDV.Link] Supported Signals by SDV.Link)
 
 ## Getting up and running
 
@@ -312,12 +312,60 @@ XXX FETCHAI LOGO XXX
 
 Fetch.ai is a technology company and platform designed for the AI economy. It offers tools to build, deploy, and monetize AI services. The platform enables the transformation of legacy systems for AI readiness without altering existing APIs and facilitates the discovery of services on an AI Agent network. Fetch.ai also connects multiple integrations to create new services and allows users to access these services through a single prompt.
 
-DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/login
+Sign up for your account at https://fetch.ai
+
+DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/
+
+Fetch.AI provides excellent and rich documentation here: https://fetch.ai/docs/concepts
 
 ### SDV.Link and Fetch.AI
 
-Provided in the repository XXX TODO REPO LINK XXX is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+Provided in the repository is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+
+The source code to both the remote and local agents are located here: https://github.com/zubairhamed/fetchai-kuksa-agent
 
 <img align="center" src="img/deltav-screenshot.png" width="auto" height="600" />
 
 ### Configuring and Deploying Fetch.AI Agents
+
+The agent involves two components. One deployed on the Fetch.AI cloud and the other you run locally or within reach of your Kuksa Databroker. 
+
+- The first step would be to run your local agent and to get its local address. You can find out more here: https://fetch.ai/docs/guides/agents/getting-uagent-address
+
+  Take note of this address and save this value <span style="color:red">**(local agent address)**</span>
+
+<img align="center" src="img/agentverse-1.png" width="auto" height="600" />
+
+- Also as a prerequisite, in order for your agents to communicate, you will need to setup a Mailbox on Fetch.AI. Part of this setup gives you an api key which you would use below. As part of the mailbox setup, you will provide the cloud agent's address.
+
+  The basic steps to this would be to click on "Mailroom", hit new, give a name for your mailbox and supply your <span style="color:red">**local agent's address**</span> (which you should have done in the previous step).  <span style="color:red">**You will receive a key. Save this value. (Mailbox Key)**</span>
+
+<img align="center" src="img/agentverse-2.png" width="auto" height="300" />
+
+<img align="center" src="img/agentverse-3.png" width="auto" height="300" />
+
+<img align="center" src="img/agentverse-4.png" width="auto" height="350" />
+
+
+
+- The next  step would be to deploy your cloud-based agent. This agent would provide you with an agent address which you will need to configure your local agent with. As soon as you create your agent, it will provide you with another agent address <span style="color:red">**(cloud agent address). Save this value.**</span>
+
+  Fork or copy the code from here https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/cloud-agent
+
+  Create a new agent and paste the content of agent.py as the agent's code.
+
+  
+
+
+After the steps above is done, you can then proceed to setup your local agent. You can check out sources here:
+https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/local-agent-sdv
+
+Within the sources,  replace the following variables:
+
+`DRIVER_ID = "REPLACETHIS" // Select something unique for you "e.g. BLU1000"`
+
+`API_KEY = "REPLACETHIS"     // Use "Mailbox Key"`
+
+`AGENTVERSE_AGENT_ADDRESS = "REPLACETHIS"  // Replace this with your Cloud Agent Address`
+
+If you need more help, our friends from Fetch.AI are a few tables away from us.
