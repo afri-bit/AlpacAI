@@ -9,7 +9,7 @@ It is a controller-free application which visualizes and virtualizes a Virtual C
 
 You're provided with an immersive environment with which you can develop car apps in lieu of an actual physical vehicle.
 
-<video src="img/sdvlink-video1.mp4" height="700" />
+<video src="img/sdvlink-video1.mp4" height="700"></video>
 
 ## What does it do and how does it work?
 
