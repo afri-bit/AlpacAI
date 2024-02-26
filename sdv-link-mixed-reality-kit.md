@@ -21,17 +21,19 @@ Interacting with the Virtual Car (e.g. opening doors, toggling switches, collisi
 
 So here is what is provided for you in order to take advantage of the SDV.Link app.
 
-XXX IMAGE: ARCHITECTURE DIAGRAM XXX
+<img align="center" src="img/architecture.png" width="auto" height="650" />
 
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX.
 
 <img align="center" src="img/sdvlink-screen1.jpg" width="auto" height="650" />
 
-**SDV.Link Companion App**
-This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
+**SDV.Link Car Control**
+This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. 
 
-XXX IMAGE CAR CONTROL XXX
+This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
+
+<img align="center" src="img/sdvlink-car-control.png" width="auto" height="650" />
 
 **Fetch.AI Cloud and Local Agent**
 This is a pair of agents (One running on Fetch.AI and its DeltaV service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via DeltaV, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
@@ -167,7 +169,7 @@ One of the most important is to connect/initiate a connection to the data broker
 
 You can use either your left or right hand to grab the edges of the tablet and a finger tap to tap on buttons.
 
-<img align="center" src="img/image-20240222183946936.png" height="500" />
+<img align="center" src="img/tablet.png" height="500" />
 
 ##### Configuring and Connecting to your broker
 
@@ -302,7 +304,7 @@ https://covesa.github.io/vehicle_signal_specification/
 | Vehicle.IsBrokenDown                                       |       | False         |
 | Vehicle.Chassis.Axle.Row1.SteeringAngle                    |       | 0,0           |
 | Vehicle.VehicleIdentification.VehicleSpecialUsage					 |String | ""						 |
- 
+
 
 ## Fetch.AI and DeltaV Integration
 
