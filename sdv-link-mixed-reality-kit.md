@@ -55,8 +55,8 @@ This is a sizeable amount of frameworks and tools for you to write your applicat
 
 We provide, for example an actuating Smart Seat. The seat provides a Seat Service which you can develop apps against. Our Virtual car also has seats which are moveable, so you can have the seat move in the real and virtual at the same time. Imagine the next cool Passenger Welcome Use-case?
 
-We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below:
-XXX TABLE VSS VALUES XXXX
+We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below: XXX TODO LINK TO VSS TABLE XXX
+
 
 ## Getting up and running
 
@@ -174,7 +174,7 @@ The same Virtual Tablet interface can also be found within the Virtual Car's HMI
 
 ##### Configuring and Connecting to your broker
 
-XXX IMAGE TABLET XXX
+![image-20240222183946936](C:\Users\zubai\AppData\Roaming\Typora\typora-user-images\image-20240222183946936.png)
 
 Tap on Configure DataBroker and then tap on the hostname field. You should see a virtual keyboard pop up.
 
@@ -299,6 +299,13 @@ https://covesa.github.io/vehicle_signal_specification/
 
 ## Fetch.AI and DeltaV Integration
 
+XXX LOGO XXX
 Fetch.ai is a technology company and platform designed for the AI economy. It offers tools to build, deploy, and monetize AI services. The platform enables the transformation of legacy systems for AI readiness without altering existing APIs and facilitates the discovery of services on an AI Agent network. Fetch.ai also connects multiple integrations to create new services and allows users to access these services through a single prompt.
 
 DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/login
+
+### SDV.Link and Fetch.AI
+
+Provided in the repository XXX TODO REPO LINK XXX is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+
+### Configuring and Deploying Fetch.AI Agents
