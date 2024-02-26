@@ -4,7 +4,7 @@
 
 ## Introduction
 
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/WIP.SDVLINK.DOCS/img/sdvlink-cover1.png?token=GHSAT0AAAAAACMLLRNX3VWYRYOG25H37AJKZO4KTKAe)
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-cover1.png?token=GHSAT0AAAAAACMLLRNXGI3RQHXO4DX2RTMGZO4L63Q)
 
 The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
 
@@ -31,12 +31,16 @@ XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX.
 
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/WIP.SDVLINK.DOCS/img/sdvlink-cover2.png?token=GHSAT0AAAAAACMLLRNXZCMM7FYNP6YIEZBGZO4KTRA)
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-cover2.png?token=GHSAT0AAAAAACMLLRNWNQ23MYCKRLJPOKWKZO4L64A)
+
+
+
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-screen1.jpg?token=GHSAT0AAAAAACMLLRNWYZKEAWGKO4AJS46CZO4L5NA)
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
 
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/WIP.SDVLINK.DOCS/img/sdvlink-screen1.jpg?token=GHSAT0AAAAAACMLLRNW2R33IQU3S46ZZBEKZO4KUEA)
+XXX IMAGE CAR CONTROL XXX
 
 **Fetch.AI Cloud and Local Agent**
 This is a pair of agents (One running on Fetch.AI and its DeltaV service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via DeltaV, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
@@ -58,7 +62,9 @@ This is a sizeable amount of frameworks and tools for you to write your applicat
 
 We provide, for example an actuating Smart Seat. The seat provides a Seat Service which you can develop apps against. Our Virtual car also has seats which are moveable, so you can have the seat move in the real and virtual at the same time. Imagine the next cool Passenger Welcome Use-case?
 
-We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below: XXX TODO LINK TO VSS TABLE XXX
+We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below: 
+
+XXX TODO LINK TO VSS TABLE XXX
 
 
 ## Getting up and running
@@ -160,13 +166,11 @@ XXX VIDEO GUARDIAN WALL XXXX
 
 Various objects can be directly interacted with. (For example the Virtual Tablet, Logos, the car doors and trunks). At this point, you should be able to see a "ghost" virtual hand overlaid on your own. You can just reach out and grab or use your finger to press/tap on elements of the scene.
 
-![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/WIP.SDVLINK.DOCS/img/sdvlink-screen2.jpg?token=GHSAT0AAAAAACMLLRNWMNZPKTX2Z7KY3U4MZO4KVYQ)
-
 #### The Virtual Console
 
 The Virtual Console is located on the left and shows every pertinent messages during the running of the app. You can see any VSS signals coming in or going out, error messages or notifications.
 
-XXX IMAGE VIRTUAL CONSOLE XXX
+![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-screen6.jpg?token=GHSAT0AAAAAACMLLRNWA7TXIPOF3A2RXJ64ZO4MBQQ)
 
 #### The Virtual Tablet
 
@@ -245,7 +249,7 @@ The Virtual City is a mini virtual city which contains features such as  a minia
 
 Given the right signals, you can steer the mini car across the city.
 
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/WIP.SDVLINK.DOCS/img/sdvlink-screen3.jpg?token=GHSAT0AAAAAACMLLRNW7MIVR66JM3EZGIO6ZO4KWJA)
+![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-screen3.jpg?token=GHSAT0AAAAAACMLLRNXC4GUOB2DRR75HUHYZO4MAOQ)
 
 As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.
 
