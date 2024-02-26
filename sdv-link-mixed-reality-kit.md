@@ -1,10 +1,7 @@
 # SDV.Link Mixed Reality Kit
 
-
-
 ## Introduction
-
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-cover1.png?token=GHSAT0AAAAAACMLLRNXGI3RQHXO4DX2RTMGZO4L63Q)
+<img src="img/sdvlink-cover1.png" width="auto" height="300" />
 
 The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
 
@@ -12,7 +9,7 @@ It is a controller-free application which visualizes and virtualizes a Virtual C
 
 You're provided with an immersive environment with which you can develop car apps in lieu of an actual physical vehicle.
 
-XXX VIDEO AND IMAGES OF SDV.LINK XXX
+<video src="img/sdvlink-video1.mp4" height="700"></video>
 
 ## What does it do and how does it work?
 
@@ -31,11 +28,7 @@ XXX IMAGE: ARCHITECTURE DIAGRAM XXX
 **The SDV.Link App**
 The Mixed Reality application which runs on our headsets available at BCX.
 
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-cover2.png?token=GHSAT0AAAAAACMLLRNWNQ23MYCKRLJPOKWKZO4L64A)
-
-
-
-![img](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-screen1.jpg?token=GHSAT0AAAAAACMLLRNWYZKEAWGKO4AJS46CZO4L5NA)
+<img src="img/sdvlink-screen1.jpg" width="auto" height="900" />
 
 **SDV.Link Companion App**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
@@ -65,7 +58,6 @@ We provide, for example an actuating Smart Seat. The seat provides a Seat Servic
 We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below: 
 
 XXX TODO LINK TO VSS TABLE XXX
-
 
 ## Getting up and running
 
@@ -170,7 +162,7 @@ Various objects can be directly interacted with. (For example the Virtual Tablet
 
 The Virtual Console is located on the left and shows every pertinent messages during the running of the app. You can see any VSS signals coming in or going out, error messages or notifications.
 
-![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-screen6.jpg?token=GHSAT0AAAAAACMLLRNWA7TXIPOF3A2RXJ64ZO4MBQQ)
+<img src="img/sdvlink-screen6.jpg" width="auto" height="900" />
 
 #### The Virtual Tablet
 
@@ -181,7 +173,7 @@ The same Virtual Tablet interface can also be found within the Virtual Car's HMI
 
 ##### Configuring and Connecting to your broker
 
-![image-20240222183946936](C:\Users\zubai\AppData\Roaming\Typora\typora-user-images\image-20240222183946936.png)
+<img src="img/image-20240222183946936.png" width="auto" height="700" />
 
 Tap on Configure DataBroker and then tap on the hostname field. You should see a virtual keyboard pop up.
 
@@ -205,7 +197,7 @@ XXX IMAGE MOVE SCENE XXX
 
 The Virtual Car is not the only feature of SDV.Link. The Toggle City/Car Mode button allows you to switch between the Virtual Car and a Mini City which contains a miniaturized version of the Virtual Car which you can use to control, drive around etc
 
-XXX IMAGE CITY XXX
+<img src="img/sdvlink-screen3.jpg" width="auto" height="900" />
 
 ##### Weather Conditions
 
