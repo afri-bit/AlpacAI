@@ -352,7 +352,7 @@ The agent involves two components. One deployed on the Fetch.AI cloud and the ot
 
   Fork or copy the code from here https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/cloud-agent
 
-  Create a new agent and paste the content of agent.py as the agent's code.
+  Create a new agent and paste the content of agent.py as the agent's code
 
   
 
@@ -368,4 +368,9 @@ Within the sources,  replace the following variables:
 
 `AGENTVERSE_AGENT_ADDRESS = "REPLACETHIS"  // Replace this with your Cloud Agent Address`
 
+Here is a summary of the setup required (and where the values come from)
+
+<img align="center" src="img/architecture-fetchai-setup.png" width="auto" height="650" />
+
 If you need more help, our friends from Fetch.AI are a few tables away from us.
+
