@@ -1,6 +1,6 @@
 import pyaudio
 from google.cloud import speech
-from src.alpacai.core.llm.sdv_llm import get_and_speak_response
+from alpacai.core.genai.sdv_llm import get_and_speak_response
 
 # Create a speech client
 client = speech.SpeechClient()
