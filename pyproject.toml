@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpacai"
+version = "0.1.0"
+license = {text = "AlpacAI"}
+authors = [
+    {name = "Afrizal Herlambang", email = "afri.bit@outlook.com"},
+    {name = "Zehra Nur Olgun", email = "zehranurro@gmail.com"},
+    {name = "Carlos Hernandez", email = "albertocarlos.hernandez@gmail.com"},
+    {name = "Sergio Roa-Ovalle", email = "s.roa@computer.org"},
+]
+description = "Intelligent Driver Drowsiness System"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["SDV", "hackathon", "GenAI"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "kuksa-client",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[project.scripts]
+# my-script = "my_package.module:function"
