@@ -101,8 +101,10 @@ while(cap.isOpened()):
                                                                                             distractionScorePrev, keepPrev, startTime, 
                                                                                             setTime)
 
-        cv2.putText(frame, str(drowsiness_score)[:4], (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 
+        cv2.putText(frame, "Drowsiness score: " + str(drowsiness_score)[:4], (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 
                    1, (0, 255, 0), 2, cv2.LINE_AA)
+        cv2.putText(frame, "Distraction score: " + str(distractionScore)[:4], (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 
+                   1, (0, 0, 255), 2, cv2.LINE_AA)
         client.set_current_values({
             API_FATIGUE_LEVEL: Datapoint(drowsiness_score),
             API_DISTRACTION_LEVEL: Datapoint(distractionScore),
@@ -119,6 +121,10 @@ while(cap.isOpened()):
         print(f"Total time to process 1 frame: {time.time() - start_time}")
         print()
 
+        cv2.imshow('frame', frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'): 
+            break
 
     else:
         break
