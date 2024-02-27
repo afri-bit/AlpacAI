@@ -3,7 +3,7 @@
 ## Introduction
 <img src="img/sdvlink-cover1.png" width="auto" height="300" />
 
-The SDV.Link App is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
+The **SDV.Link App** is an app preloaded on our VR headsets available at BCX (Meta Quest 3, Meta Quest 2 and Meta Quest Pro).
 
 It is a controller-free application which visualizes and virtualizes a Virtual Car as well as a Mini map representing a Virtual City.
 
@@ -15,7 +15,9 @@ With SDV.Link, you are able to write applications based on Covesa and VSS signal
 
 Interacting with the Virtual Car (e.g. opening doors, toggling switches, collisions to builidngs etc) also emits VSS signals so that your applications can react to these signals and write your use-cases.
 
-![](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4)
+[Download Video of a quick overview of SDV.Link](https://raw.githubusercontent.com/Bosch-ConnectedExperience-2024/SDV_GettingStarted/main/img/sdvlink-video1.mp4)
+
+
 
 ## Is that all? What else is provided? What can i do with these?
 
@@ -31,14 +33,20 @@ The Mixed Reality application which runs on our headsets available at BCX.
 **SDV.Link Car Control**
 This is a python-based app which acts as a keyboard car controller. For one, It allows you to use WSAD keys for example for driving around (i..e emitting signals which tasks the car to move forward, back, etc). This is best paired with the SDV.Link VR App when used in City Mode. 
 
-This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the IsBrokenDown signal). FUN!!|
+This will allow you to control the Mini City car and drive around the city. In turn, whatever events occuring within the city is also reported back (for example a car crash emits the `IsBrokenDown` signal). FUN!!
+
+You can check out the source code to this here: https://github.com/zubairhamed/kuksa-sdvlink-companion-control
 
 <img align="center" src="img/sdvlink-car-control.png" width="auto" height="650" />
 
+
+
 **Fetch.AI Cloud and Local Agent**
-This is a pair of agents (One running on Fetch.AI and its DeltaV service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via DeltaV, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
+This is a pair of agents (One running on **Fetch.AI** and its **DeltaV** service) and the other is an agent which runs close to your broker (More about the broker later below). With such a setup you can have agents running on the cloud be able to communicate to your local setup. For example via **DeltaV**, you can use the LLM Chat service to send VSS commands to your vehicle. Not happy with that? Extend the code to put some fancy features in between!
 
 <img align="center" src="img/deltav-screenshot.png" width="auto" height="600" />
+
+
 
 **Smart Contracts**
 There are some points in the Virtual City where it emits signals in order to perform payments. Maybe you can write a payment Smart Contract? Or maybe tap on the various other signals instead? (e.g. if the car breaks down, make a payment to a towing company and send for help!)
@@ -48,38 +56,46 @@ For more information about Smart Contract use case: [Payment Use Case](./payment
 
 XXX IMAGE VIRTUAL CITY PAYMENT RESPONSE VIZ XXX
 
+
+
 **The SDV Technology Stack**
 This is a sizeable amount of frameworks and tools for you to write your applications such as Velocitas, Kuksa, Kuksa SDKs
+
+
 
 **Any Covesa-compatible Hardware**
 
 We provide, for example an actuating Smart Seat. The seat provides a Seat Service which you can develop apps against. Our Virtual car also has seats which are moveable, so you can have the seat move in the real and virtual at the same time. Imagine the next cool Passenger Welcome Use-case?
 
-We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below. 
+We recommend reading up on Covesa. The VSS signals we support (meaning which you can subscribe and set values to), are listed below.  [Supported Signals by SDV.Link] Supported Signals by SDV.Link)
 
-XXX TODO LINK TO VSS TABLE XXX
+
 
 ## Getting up and running
 
 Before you run the SDV.Link XR App, its useful to ensure you've your development environment setup.
 
-Depending on what you want or need you might want to refer to our other documentation pages (e.g. Velocitas) to setup your environment. Minimally, you would need to run the Kuksa Databroker, which is conveniently available as a Docker Container as well as Python.
+Depending on what you want or need you might want to refer to our other documentation pages (e.g. Velocitas) to setup your environment. Minimally, you would need to run the Kuksa Databroker, which is conveniently available as a Docker Container as well as Python. https://pypi.org/project/kuksa-client/
 
-Kuksa has also non-python SDKs available. If that's your poison, knock yourself out!
+> [!TIP]
+>
+> Kuksa has also non-python SDKs available. If that's your poison, knock yourself out!
 
-XXX LINKS XXX
+
 
 ## Running a compatible stack or server (e.g. Kuksa DataBroker)
 
 The simplest way? Install docker and run the following command.
 
-docker pull ghcr.io/eclipse/kuksa.val/databroker:0.4.1
+`docker pull ghcr.io/eclipse/kuksa.val/databroker:0.4.1`
 
 Then run the container, exposing and mapping to port 55555
 
 You can also deploy the container to any cloud Docker services (e.g. Azure Container Instances).
 
 If you're running one of our prebuilt setups  (e.g via Eclipse Leda, etc), you are already running a Kuksa Databroker. You can reuse this.
+
+
 
 ## Install and Test the Kuksa Client
 
@@ -88,15 +104,15 @@ We will install the Kuksa Client, connect it to our broker and run some simple c
 
 The Kuksa Client https://pypi.org/project/kuksa-client/ can be installed via pip
 
-> pip install kuksa-client
+`pip install kuksa-client`
 
 After installing, and you have your databroker running on your localhost on port 55555, you can simply run:
 
-> kuksa-client
+`kuksa-client`
 
 If your broker lies elsewhere, you will have to specify the URI to it, for example:
 
-> kuksa-client grpc://ip-address-or-host:55555
+`kuksa-client grpc://ip-address-or-host:55555`
 
 If all goes well, you should see a message that your kuksa client has connected.
 
@@ -104,29 +120,39 @@ The Kuksa Client is your best friend for debugging, sending commands and to subs
 
 Some useful commands you can use with Kuksa Client
 
-> Set Value
->
-> Get Values
->
-> Subscribe to Values
+**Set value to a signal**
+
+>  setValue Signal Name value
+
+`example: setValue Vehicle.Speed 45`
+
+**Read a value for a signal**
+
+>  getValue Signal Name
+
+`example: getValue Vehicle.speed`
+
+**Listen for changes for a given Signal Name**
+
+>  subscribe SignalName
+
+`example: subscribe Vehicle.Speed`
 
 
 
 ### Grab your VR and Set up the Guardian/Boundary
 
-Now that you've your broker up, let's get on with the fun stuff!
+Now that you've your broker up, let's get on with the fun stuff! Find a VR headset at BCX and put it on!
 
-Find a VR headset at BCX and put it on!
+You will need to specify a Guardian. A Guardian is basically a virtual area which you can specify so that the XR app can show the virtual environment in and by which you can walk around. It also ensures that you're within this area and that you don't walk out of it for safety reasons. So find a nice wide spot and give yourself lots of ample space.
 
-To get the best comfort, you might need to adjust the Inter-pupiliary Distance (IPD) so as to get the best comfort for your eyes.
+You can find instructions on setting a bounday here: https://www.meta.com/en-gb/help/quest/articles/in-vr-experiences/oculus-features/boundary/
 
-Next, you will need to specify a Guardian. A Guardian is basically a virtual area which you can specify so that the XR app can show the virtual environment in and by which you can walk around. It also ensures that you're within this area and that you don't walk out of it for safety reasons.
+> [!CAUTION]
+>
+> Always be careful of your surroundings. It would be great if you have a buddy who is also watching over you
 
-Take a look here or find one of our Hack Coaches if you need an assist.
 
-https://www.meta.com/en-gb/help/quest/articles/in-vr-experiences/oculus-features/boundary/
-
-XXX NOTE: ALWSYS BE CAREFUL AND AWARE OF YOUR SURROUNDINGS. It would be great if you have a buddy who is also watching over you XXX
 
 ## Run the SDV.Link App
 
@@ -136,9 +162,7 @@ Since the app supports 100% hand-tracked controls, you don't need the Meta Quest
 
 #### The Oculus Menu ####
 
-A useful function to take note of is the ubiquitous Oculus Menu. Its a menu which has some basic functions which could be useful.
-
-See https://www.youtube.com/watch?v=a0cfmOyLeo4
+A useful function to take note of is the ubiquitous Oculus Menu. Its a menu which has some basic functions which could be useful. See https://www.youtube.com/watch?v=a0cfmOyLeo4
 
 Two of the features which are useful are the one to re-center youself (in case the environment ever is in a weird state) and the recording feature which would be great if you want to record your pitches (....or just for fun and giggles.). Approach our Hack Coaches if you need to retrieve the images and videos recorded from our devices.
 
@@ -154,7 +178,9 @@ In order to get around, simply walk around the scene. The space you're allowed t
 
 if you find that you're walking into interesting areas of the XR scene and they disappear (you should see a virtual wall before that happens), you would need to define a larger boundary.
 
-XXX VIDEO GUARDIAN WALL XXXX
+> [!TIP]
+>
+> If you're moving around and you find a virtual meshed wall, that's the edge of your boundary. Consider enlarging your boundaries if you need to.
 
 Various objects can be directly interacted with. (For example the Virtual Tablet, Logos, the car doors and trunks). At this point, you should be able to see a "ghost" virtual hand overlaid on your own. You can just reach out and grab or use your finger to press/tap on elements of the scene.
 
@@ -177,9 +203,11 @@ Tap on Configure DataBroker and then tap on the hostname field. You should see a
 
 Fill in with your databroker host and port (typically 55555) and then hit save and then connect.
 
-In case you do not have a databroker up yet, you can click on the Test Demo Databroker button to try out the app with our test cloud databroker.
+In case you do not have a databroker up yet, you can click on the Test Demo Databroker button to try out the app with our test cloud databroker. 
 
-Be warned though, the test databroker is not designed for multiuser use. So if multiple users use the broker at the same time, its inevitable that weird stuff will happen :)
+> [!CAUTION]
+>
+> This Test Demo Broker is not meant for general purpose though. Since its shared, the results of using it might be unpredictable.
 
 If you successfully connect to the databroker, you should see the Debug Console showing success
 
@@ -209,7 +237,7 @@ SDV.Link periodically emits the following values which is influenced by the Weat
 
 <img align="center" src="img/sdvlink-weather.jpg" width="auto" height="650" />
 
->TODO Weather Signals
+
 
 ##### Clear Debug Console
 
@@ -219,25 +247,11 @@ Pretty much what it says. Clears the Virtual Debug Console.
 
 The Virtual car is a lifesized virtual vehicle you can work with. It is aware of various VSS signals.
 
-For example, an incoming XXX TODO DOOR OPEN XXX signal with a value of True would trigger the door to be open.
+For example, an incoming `Vehicle.Cabin.Door.Row1.DriverSide.IsOpen`signal with a value of `True` would trigger the door to be open.
 
 However, if the door of the vehicle is closed and you open the door in the XR space, it emits the same signal as True to your applications.
 
-##### Features of the Virtual Cars
 
-Doors
-
-Hood
-
-Trunk
-
-Fuel Port
-
-Steering Wheel
-
-Engine Start/Stop
-
-NOTE: SDV.Link provides SOME level of logic for functionalities (e.g. when you open the door, it emits the signal) but the behaviour of the car should largely come from applications and services. (i.e. your apps)
 
 #### The Virtual City
 
@@ -247,13 +261,15 @@ Given the right signals, you can steer the mini car across the city.
 
 <img align="center" src="img/sdvlink-screen3.jpg" width="auto" height="650" />
 
-As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.\
+As the car moves, a down-scaled version of GPS of the mini city is also emitted periodically for use-cases related to positioning.
 
 
 | Signal                                                     | Type   | Payload			 														  	 | Trigger Point																					|
 | ---------------------------------------------------------- | -----  | -------------------------------------------- | ------------------------------------------------------ |
 | Vehicle.VehicleIdentification.VehicleSpecialUsage					 | String |>>> \|\${tx-date}\|${DriverId}\|Fuel\|\${liter}        | As soon as the vehicle left the Fuel Station           |
 |																														 | String |>>> \|\${tx-date}\|${DriverId}\|Parking\|\${duration}  | As soon as the vehicle left the Parking                | 
+
+
 
 # Writing SDV Apps
 
@@ -279,7 +295,7 @@ https://covesa.github.io/vehicle_signal_specification/
 | Vehicle.Body.Trunk.Front.IsOpen                            |       | False         |
 | Vehicle.Body.Lights.Beam.High.IsOn                         |       | False         |
 | Vehicle.Body.Lights.Beam.Low.IsOn                          |       | False         |
-| "Vehicle.Body.Lights.DirectionIndicator.Left.IsSignaling   |       | False         |
+| Vehicle.Body.Lights.DirectionIndicator.Left.IsSignaling   |       | False         |
 | Vehicle.Body.Lights.DirectionIndicator.Right.IsSignaling   |       | False         |
 | Vehicle.Body.Lights.Brake.IsActive                         |       | False         |
 | Vehicle.Body.Lights.Backup.IsOn                            |       | False         |
@@ -306,18 +322,78 @@ https://covesa.github.io/vehicle_signal_specification/
 | Vehicle.VehicleIdentification.VehicleSpecialUsage					 |String | ""						 |
 
 
+
 ## Fetch.AI and DeltaV Integration
 
-XXX FETCHAI LOGO XXX
+
+
+<img src="img/fetchai-logo.png" />
+
+
 
 Fetch.ai is a technology company and platform designed for the AI economy. It offers tools to build, deploy, and monetize AI services. The platform enables the transformation of legacy systems for AI readiness without altering existing APIs and facilitates the discovery of services on an AI Agent network. Fetch.ai also connects multiple integrations to create new services and allows users to access these services through a single prompt.
 
-DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/login
+Sign up for your account at https://fetch.ai
+
+DeltaV works as **an AI-based chat interface**. DeltaV acts as a front-end interface to the AI Engine, enabling a simple chat interface through which users can enter their requests, which are then translated by the AI Engine into a series of tasks to be performed. https://deltav.agentverse.ai/
+
+Fetch.AI provides excellent and rich documentation here: https://fetch.ai/docs/concepts
 
 ### SDV.Link and Fetch.AI
 
-Provided in the repository XXX TODO REPO LINK XXX is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+Provided in the repository is both a remote and cloud agent which allows one to connect SDV.Link from DeltaV to the edge (SDV.Link XR App).
+
+The source code to both the remote and local agents are located here: https://github.com/zubairhamed/fetchai-kuksa-agent
 
 <img align="center" src="img/deltav-screenshot.png" width="auto" height="600" />
 
 ### Configuring and Deploying Fetch.AI Agents
+
+The agent involves two components. One deployed on the Fetch.AI cloud and the other you run locally or within reach of your Kuksa Databroker. 
+
+- The first step would be to run your local agent and to get its local address. You can find out more here: https://fetch.ai/docs/guides/agents/getting-uagent-address
+
+  Take note of this address and save this value <span style="color:red">**(local agent address)**</span>
+
+<img align="center" src="img/agentverse-1.png" width="auto" height="600" />
+
+- Also as a prerequisite, in order for your agents to communicate, you will need to setup a Mailbox on Fetch.AI. Part of this setup gives you an api key which you would use below. As part of the mailbox setup, you will provide the cloud agent's address.
+
+  The basic steps to this would be to click on "Mailroom", hit new, give a name for your mailbox and supply your <span style="color:red">**local agent's address**</span> (which you should have done in the previous step).  <span style="color:red">**You will receive a key. Save this value. (Mailbox Key)**</span>
+
+<img align="center" src="img/agentverse-2.png" width="auto" height="300" />
+
+<img align="center" src="img/agentverse-3.png" width="auto" height="300" />
+
+<img align="center" src="img/agentverse-4.png" width="auto" height="350" />
+
+
+
+- The next  step would be to deploy your cloud-based agent. This agent would provide you with an agent address which you will need to configure your local agent with. As soon as you create your agent, it will provide you with another agent address <span style="color:red">**(cloud agent address). Save this value.**</span>
+
+  Fork or copy the code from here https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/cloud-agent
+
+  Create a new agent and paste the content of agent.py as the agent's code
+
+  
+
+
+After the steps above is done, you can then proceed to setup your local agent. You can check out sources here:
+https://github.com/zubairhamed/fetchai-kuksa-agent/tree/main/local-agent-sdv
+
+Within the sources,  replace the following variables:
+
+`DRIVER_ID = "REPLACETHIS" // Select something unique for you "e.g. BLU1000"`
+
+`API_KEY = "REPLACETHIS"     // Use "Mailbox Key"`
+
+`AGENTVERSE_AGENT_ADDRESS = "REPLACETHIS"  // Replace this with your Cloud Agent Address`
+
+Here is a summary of the setup required (and where the values come from)
+
+<img align="center" src="img/architecture-fetchai-setup.png" width="auto" height="650" />
+
+If you need more help, our friends from Fetch.AI are a few tables away from us.
+
+### 
+

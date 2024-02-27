@@ -23,14 +23,15 @@ SDV combines a number of technologies and open source projects around the idea o
 - <img src="img/lukas.jpg" alt="Image Lukas" width="auto" height="200"> Lukas Mittag - @Lukas Mittag
 - <img src="img/pavel.jpg" alt="Image Pavel" width="auto" height="200"> Pavel Simo - @Pavel Simo
 - <img src="img/johannes.jpg" alt="Image Johannes" width="auto" height="200"> Johannes Kristan - @Johannes Kristan (Bosch)
+- <img src="img/zubair.jpg" alt="Zubair" width="auto" height="200"> Zubair Mohammad [LinkedIn](https://www.linkedin.com/in/zubairhamed/) | [GitHub](https://github.com/zubairhamed/)
 
 ## What do we bring<a name="what-we-provide"></a>
 
 - [Eclipse Kuksa data broker](https://github.com/eclipse/kuksa.val/tree/master/kuksa_databroker)
 - [Vehicle Signal Specification (VSS)](https://covesa.github.io/vehicle_signal_specification/)
-- VR Simulation of a single vehicle (see [SDV.Link Mixed Reality Kit](sdv-link-mixed-reality-kit.md) for more details)
-- VR simulation of a city
-- real moveable car seat
+- SDV.Link: Mixed Reality Environment for a VSS-aware Digital 3D Twin of a Vehicle and Virtual City [SDV.Link Mixed Reality Kit](sdv-link-mixed-reality-kit.md) for more details)
+  <img src="img/sdvlink-cover1.png" width="auto" height="100" />
+- Physical connected Movable Seat
 
 ## Sample Scenarios<a name="sample-scenarios"></a>
 
