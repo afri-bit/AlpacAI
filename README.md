@@ -43,6 +43,7 @@ source .venv/bin/activate
 
 # Install python package
 (.venv) pip install .
+```
 
 ## Usage
 
