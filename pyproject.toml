@@ -8,9 +8,9 @@ version = "0.1.0"
 license = {text = "AlpacAI"}
 authors = [
     {name = "Afrizal Herlambang", email = "afri.bit@outlook.com"},
-    {name = "Afrizal Herlambang", email = "afri.bit@outlook.com"},
-    {name = "Afrizal Herlambang", email = "afri.bit@outlook.com"},
-    {name = "Afrizal Herlambang", email = "afri.bit@outlook.com"},
+    {name = "Zehra Nur Olgun", email = "zehranurro@gmail.com"},
+    {name = "Carlos Hernandez", email = "albertocarlos.hernandez@gmail.com"},
+    {name = "Sergio Roa-Ovalle", email = "s.roa@computer.org"},
 ]
 description = "Intelligent Driver Drowsiness System"
 readme = "README.md"
