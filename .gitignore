@@ -161,3 +161,7 @@ cython_debug/
 
 # vssclient / Kuksa history
 .vssclient_history
+
+*.json
+.DS_Store
+*.pyc
