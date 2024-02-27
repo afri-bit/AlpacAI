@@ -1,8 +1,9 @@
-from vertexai.preview.generative_models import GenerativeModel
-import vertexai.preview.generative_models as generative_models
 import vertexai
+import vertexai.preview.generative_models as generative_models
 from google.cloud import aiplatform
 from textToSpeech import text_to_speech
+from vertexai.preview.generative_models import GenerativeModel
+
 
 def get_and_speak_response(input_text):
     """Returns the speech of LLM response given the input text
@@ -28,7 +29,7 @@ def get_and_speak_response(input_text):
         generative_models.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: generative_models.HarmBlockThreshold.BLOCK_ONLY_HIGH,
         generative_models.HarmCategory.HARM_CATEGORY_HARASSMENT: generative_models.HarmBlockThreshold.BLOCK_ONLY_HIGH,
     })
-    
+
     response_text = response.candidates[0].content.parts[0].text
 
     print(response_text)
