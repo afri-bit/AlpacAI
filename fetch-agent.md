@@ -1,2 +1,0 @@
-# Fetch.AI agent
-
