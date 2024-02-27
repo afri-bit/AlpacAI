@@ -1,6 +1,6 @@
 import pyaudio
 from google.cloud import speech
-
+from textToSpeech import text_to_speech
 # Create a speech client
 client = speech.SpeechClient()
 
@@ -20,6 +20,12 @@ def listen_print_loop(responses):
 
         # The first alternative is the most likely one for this portion.
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
+        transcript = result.alternatives[0].transcript
+        # Check if the keyword 'alpaca' is in the transcript
+        if 'alpaka' in transcript.lower():
+            print("Keyword 'alpaca' detected!")
+            # Here, trigger your desired action
+            text_to_speech("Yes, Zehra")
 
 def main():
     # Microphone stream setup
