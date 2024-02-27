@@ -1,6 +1,7 @@
 """Synthesizes speech from the input string of text."""
-from google.cloud import texttospeech
 import simpleaudio as sa
+from google.cloud import texttospeech
+
 
 def text_to_speech(txt):
     """Generates audio content for given text
@@ -31,7 +32,7 @@ def text_to_speech(txt):
 
     play_speech(audio_content)
     # export_speech(audio_content)
-    
+
 
 def play_speech(audio_data):
     """Plays generated audio
@@ -43,6 +44,7 @@ def play_speech(audio_data):
     play_obj = wave_obj.play()
     play_obj.wait_done()  # Wait until sound has finished playing
 
+
 def export_speech(audio_content):
     """Exports generated audio into mp3 file
 
@@ -52,6 +54,7 @@ def export_speech(audio_content):
     with open("output.mp3", "wb") as out:
         out.write(audio_content)
         print('Audio content written to file "output.mp3"')
+
 
 if __name__ == "__main__":
     text_to_speech("Hi there")

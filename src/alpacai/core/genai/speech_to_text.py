@@ -1,6 +1,6 @@
 import pyaudio
 from google.cloud import speech
-from sdv_llm import get_and_speak_response
+from src.alpacai.core.llm.sdv_llm import get_and_speak_response
 
 # Create a speech client
 client = speech.SpeechClient()
@@ -32,7 +32,7 @@ def listen_print_loop(responses, keyword):
         if keyword in transcript.lower():
             print("Keyword 'alpaca' detected!")
             print(transcript)
-            transcript = transcript.replace("alpaka","")
+            transcript = transcript.replace("alpaka", "")
             get_and_speak_response(transcript)
             # print(u'Transcript: {}'.format(result.alternatives[0].transcript))
             # transcript = result.alternatives[0].transcript
@@ -63,9 +63,10 @@ def speech_to_text():
 
     # Start streaming
     responses = client.streaming_recognize(streaming_config, stream)
-    
+
     # Listen to the responses
     listen_print_loop(responses, "alpaka")
+
 
 if __name__ == '__main__':
     speech_to_text()
