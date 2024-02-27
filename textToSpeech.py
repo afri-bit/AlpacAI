@@ -1,11 +1,9 @@
 """Synthesizes speech from the input string of text."""
 from google.cloud import texttospeech
-from google.oauth2 import service_account
-import json
 
 def text_to_speech(txt):
 
-    client = texttospeech.TextToSpeechClient()#(credentials = credentials)
+    client = texttospeech.TextToSpeechClient()
 
     input_text = texttospeech.SynthesisInput(text=txt)
 
@@ -29,4 +27,7 @@ def text_to_speech(txt):
     with open("output.mp3", "wb") as out:
         out.write(response.audio_content)
         print('Audio content written to file "output.mp3"')
-   
+
+if __name__ == "__main__":
+    text = "Hi there"
+    text_to_speech(text) 
