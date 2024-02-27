@@ -19,7 +19,7 @@ The project envisions expanding its capabilities to include predictive accident 
 ## Prerequistes
 * Linux Ubuntu 22.04
 * `python` > 3.10+
-* `gcloud` (See [gloud installation](https://cloud.google.com/sdk/docs/install?hl=de#deb).)
+* `gcloud` (See [gcloud installation](https://cloud.google.com/sdk/docs/install?hl=de#deb).)
 * `portaudio`  
   ```commandline
   sudo apt install portaudio19-dev python3-all-dev
