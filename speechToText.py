@@ -10,7 +10,7 @@ RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
 
 
-def listen_print_loop(responses, keyword):
+def listen_print_loop(responses):
     """Listens to microphone until the keyword is being heard
 
     Args:
@@ -29,13 +29,12 @@ def listen_print_loop(responses, keyword):
         print(u'Transcript: {}'.format(result.alternatives[0].transcript))
         transcript = result.alternatives[0].transcript
         # Check if the keyword 'alpaca' is in the transcript
-        if keyword in transcript.lower():
+        if "alpaca" in transcript.lower() or "alpaka" in transcript.lower():
             print("Keyword 'alpaca' detected!")
             print(transcript)
             transcript = transcript.replace("alpaka","")
+            transcript = transcript.replace("alpaca","")
             get_and_speak_response(transcript)
-            # print(u'Transcript: {}'.format(result.alternatives[0].transcript))
-            # transcript = result.alternatives[0].transcript
             # continuous_chat_with_voice(transcript)
 
 
@@ -65,7 +64,7 @@ def speech_to_text():
     responses = client.streaming_recognize(streaming_config, stream)
     
     # Listen to the responses
-    listen_print_loop(responses, "alpaka")
+    listen_print_loop(responses)
 
 if __name__ == '__main__':
     speech_to_text()

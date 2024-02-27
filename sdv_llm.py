@@ -35,3 +35,4 @@ def get_and_speak_response(input_text):
 
     # Use TTS to speak out the response
     text_to_speech(response_text)
+    return response_text
