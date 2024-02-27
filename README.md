@@ -1,4 +1,5 @@
-# AlpacAI
+# AttentiveAI
+Provided by <b>AlpacAI</b>
 
 <p align=center>
 <img src="https://github.com/zennur/ConversationalAI_SDV/assets/7806017/abd3d0f3-c75c-47e3-ab3c-1b06aa6f8a7d" width="50%"/>
