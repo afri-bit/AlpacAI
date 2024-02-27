@@ -1,7 +1,9 @@
 # AlpacAI
 
-![alpacai](https://github.com/zennur/ConversationalAI_SDV/assets/7806017/abd3d0f3-c75c-47e3-ab3c-1b06aa6f8a7d)
-
+<p align=center>
+<img src="https://github.com/zennur/ConversationalAI_SDV/assets/7806017/abd3d0f3-c75c-47e3-ab3c-1b06aa6f8a7d" width="50%"/>
+</p>
+  
 ## Problem Statement
 
 AttentiveAI represents a cutting-edge integration of AI technologies with automotive safety systems, designed to redefine the driving experience. At its core, AttentiveAI leverages advanced machine learning algorithms, natural language processing, and computer vision to monitor driver attentiveness and provide interactive assistance. By ensuring that drivers remain focused and alert, AttentiveAI aims to significantly reduce the risk of accidents caused by distractions.
