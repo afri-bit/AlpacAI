@@ -223,11 +223,10 @@ If when SDV.Link starts up, perhaps the scene is not in the right place. You can
 
 The Virtual Car is not the only feature of SDV.Link. The Toggle City/Car Mode button allows you to switch between the Virtual Car and a Mini City which contains a miniaturized version of the Virtual Car which you can use to control, drive around etc
 
-<img align="center" src="img/sdvlink-toggle1.jpg" width="auto" height="650" />
+| <img align="center" src="img/sdvlink-toggle1.jpg" width="400" /> | <img align="center" src="img/sdvlink-toggle2.jpg" width="400" /> |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 
-<img align="center" src="img/sdvlink-toggle2.jpg" width="auto" height="650" />
 
-  
 
 ##### Weather Conditions
 
@@ -242,6 +241,8 @@ SDV.Link periodically emits the following values which is influenced by the Weat
 ##### Clear Debug Console
 
 Pretty much what it says. Clears the Virtual Debug Console.
+
+
 
 #### The Virtual Car
 
@@ -361,13 +362,10 @@ The agent involves two components. One deployed on the Fetch.AI cloud and the ot
 
   The basic steps to this would be to click on "Mailroom", hit new, give a name for your mailbox and supply your <span style="color:red">**local agent's address**</span> (which you should have done in the previous step).  <span style="color:red">**You will receive a key. Save this value. (Mailbox Key)**</span>
 
-<img align="center" src="img/agentverse-2.png" width="auto" height="300" />
+  | <img align="center" src="img/agentverse-2.png" width="300" /> | <img align="center" src="img/agentverse-3.png" width="300" /> | <img align="center" src="img/agentverse-4.png" width="300" /> |
+  | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
-<img align="center" src="img/agentverse-3.png" width="auto" height="300" />
-
-<img align="center" src="img/agentverse-4.png" width="auto" height="350" />
-
-
+  
 
 - The next  step would be to deploy your cloud-based agent. This agent would provide you with an agent address which you will need to configure your local agent with. As soon as you create your agent, it will provide you with another agent address <span style="color:red">**(cloud agent address). Save this value.**</span>
 
