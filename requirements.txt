@@ -6,3 +6,6 @@ pyaudio
 simpleaudio
 vertexai
 google-cloud-aiplatform
+googlemaps
+pygame
+keyboard
