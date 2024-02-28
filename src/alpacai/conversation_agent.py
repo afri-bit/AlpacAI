@@ -1,21 +1,38 @@
+import argparse
 import random
+import sys
 import time
+
 import googlemaps
 import pygame
+from kuksa_client.grpc import VSSClient
 
 from alpacai.core.genai.sdv_llm import get_and_speak_response
-from alpacai.core.genai.text_to_speech import text_to_speech
 
 GOOGLE_API_KEY = ""
 
+API_DISTRACTION_LEVEL = "Vehicle.Driver.DistractionLevel"
+API_FATIGUE_LEVEL = "Vehicle.Driver.FatigueLevel"
+API_VEHICLE_SPEED = "Vehicle.Speed"
 
-def get_attentiveness_score():
+global client
+
+
+def get_attentiveness_score() -> int:
     """Generates dummy attentiveness score
 
     Returns:
         int: Attentiveness score
     """
-    return random.randint(0, 100)
+    global client
+
+    currect_attentive_probability_values = client.get_current_values(["Vehicle.Driver.AttentiveProbability"])
+
+    current_value = currect_attentive_probability_values["Vehicle.Driver.AttentiveProbability"].value
+
+    # TODO: Read the signal data from json if the simulation ON
+    return current_value
+
 
 def listen_to_car():
     """Listens to values coming from car
@@ -50,6 +67,7 @@ def play_music(filepath):
         break  # Exit the loop
 
     return True
+
 
 def play_warning(filepath):
     """Plays warning sound 3 times
@@ -109,7 +127,7 @@ def check_drowsiness(attentiveness_score):
         get_and_speak_response(prompt)
         play_music('sounds/electronic-rock-king-around-here-15045.mp3')
     elif 50 <= attentiveness_score < 80:
-        flag = random.randint(0,1)
+        flag = random.randint(0, 1)
         if flag == 0:
             generate_conversation()
         else:
@@ -145,12 +163,37 @@ def make_gps_suggestions(lat, lng):
                            The name of the coffee shop is {place}")
 
 
-if __name__ == "__main__":
-    # Invoke speech detection
-    # speech_to_text()
-    
-    check_drowsiness(85)
-    
-    # make_gps_suggestions(52.5170365, 13.3888599)
+def run():
+    parser = argparse.ArgumentParser(
+        prog="AttentiveAI",
+        description="Intelligent driver drowsiness avoidance with GenAI")
+    parser.add_argument("model_path", help="Path to the driver drowsiness path")
+    parser.add_argument("-vip", "--vehicle_ip", default="127.0.0.1",
+                        help="IP address to the vehicle interface communication")
+    parser.add_argument("-vp", "--vehicle_port", default="55555", help="Port communication to the vehicle")
+    parser.add_argument("-s", "--simulation", action='store_true', help="Simulation Mode ON")
+    parser.add_argument("-cp", "--config_path", type=str, help="Path to JSON file")
 
-    # listen_to_car()
+    args = parser.parse_args()
+
+    try:
+        # Invoke speech detection
+        # speech_to_text()
+
+        global client
+        client = VSSClient(args.vehicle_ip, args.vehicle_port)
+        client.connect()
+
+        # check_drowsiness(85)
+        # make_gps_suggestions(52.5170365, 13.3888599)
+
+        listen_to_car()
+    except KeyboardInterrupt:
+        print("AttentiveAI - application terminated")
+        sys.exit()
+
+    print("AttentiveAI -- End of Application")
+
+
+if __name__ == "__main__":
+    run()

@@ -29,3 +29,4 @@ package-dir = {"" = "src"}
 
 [project.scripts]
 attentiveai = "alpacai.app:run"
+convagent = "alpacai.conversation_agent:run"
