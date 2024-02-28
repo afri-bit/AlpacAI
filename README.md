@@ -49,9 +49,9 @@ The project envisions expanding its capabilities to include predictive accident 
 
 ```shell
 # Clone the repository
-git clone git@github.com:zennur/ConversationalAI_SDV.git
+git clone https://github.com/Bosch-ConnectedExperience-2024/AttentiveAI.git
 
-cd ConversationalAI_SDV
+cd AttentiveAI
 
 # Setup the python virtual environment
 python -m venv .venv
