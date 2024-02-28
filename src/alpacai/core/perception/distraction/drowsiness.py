@@ -3,13 +3,12 @@ from ultralytics import YOLO
 
 
 class Drawsiness:
-    drawsiness_model = None
-    device = None
-
     def __init__(self, drawsiness_model_path: str):
-        self.drawsiness_model_path = drawsiness_model_path
+        self.drowsiness_model = None
+        self.device = None
+        self.drowsiness_model_path = drawsiness_model_path
         try:
-            self.drawsiness_model = YOLO(self.drawsiness_model_path)
+            self.drowsiness_model = YOLO(self.drowsiness_model_path)
         except:
             raise ValueError("Unable to load the model")
 

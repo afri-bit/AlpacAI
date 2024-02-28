@@ -28,4 +28,4 @@ dependencies = [
 package-dir = {"" = "src"}
 
 [project.scripts]
-# my-script = "my_package.module:function"
+attentiveai = "alpacai.app:run"
