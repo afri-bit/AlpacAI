@@ -2,10 +2,9 @@ google-cloud-texttospeech
 google-cloud-speech
 google.cloud
 pyaudio
-#portaudio
 simpleaudio
 vertexai
 google-cloud-aiplatform
 googlemaps
 pygame
-keyboard
+ultralytics
