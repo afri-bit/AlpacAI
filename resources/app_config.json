@@ -1,0 +1,13 @@
+{
+
+}
+
+DELAY_TIME = 0.01
+
+BORKER_IP = '10.51.249.160'
+BROKER_PORT = 55555
+
+API_DISTRACTION_LEVEL = "Vehicle.Driver.DistractionLevel"
+API_FATIGUE_LEVEL = "Vehicle.Driver.FatigueLevel"
+API_VEHICLE_SPEED = "Vehicle.Speed"
+

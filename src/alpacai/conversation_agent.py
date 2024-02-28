@@ -2,6 +2,7 @@ import argparse
 import random
 import sys
 import time
+import json
 
 import googlemaps
 import pygame
@@ -17,6 +18,10 @@ API_VEHICLE_SPEED = "Vehicle.Speed"
 
 global client
 
+global sequence
+global sequence_number
+global simulation
+
 
 def get_attentiveness_score() -> int:
     """Generates dummy attentiveness score
@@ -24,13 +29,22 @@ def get_attentiveness_score() -> int:
     Returns:
         int: Attentiveness score
     """
+    global simulation
+    global sequence
+    global sequence_number
     global client
 
-    currect_attentive_probability_values = client.get_current_values(["Vehicle.Driver.AttentiveProbability"])
+    if simulation:
+        if sequence_number < len(sequence):
+            sequence_number = sequence_number + 1
+            return sequence[sequence_number]
+        else:
+            return 100  # Always return after 100 after sequence ends
+    else:  # Real data
+        currect_attentive_probability_values = client.get_current_values(["Vehicle.Driver.AttentiveProbability"])
 
-    current_value = currect_attentive_probability_values["Vehicle.Driver.AttentiveProbability"].value
+        current_value = currect_attentive_probability_values["Vehicle.Driver.AttentiveProbability"].value
 
-    # TODO: Read the signal data from json if the simulation ON
     return current_value
 
 
@@ -178,10 +192,21 @@ def run():
     try:
         # Invoke speech detection
         # speech_to_text()
+        if args.simulation:  # Using simulation data
+            global simulation
+            simulation = args.simulation
+            with open(args.config_path) as json_file:
+                data = json.load(json_file)
 
-        global client
-        client = VSSClient(args.vehicle_ip, args.vehicle_port)
-        client.connect()
+                global sequence
+                global sequence_number
+
+                sequence = data["attentive_probability"]
+                sequence_number = 0
+        else:  # Real data from vehicle
+            global client
+            client = VSSClient(args.vehicle_ip, args.vehicle_port)
+            client.connect()
 
         # check_drowsiness(85)
         # make_gps_suggestions(52.5170365, 13.3888599)
