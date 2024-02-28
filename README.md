@@ -4,7 +4,20 @@ Provided by <b>AlpacAI</b>
 <p align=center>
 <img src="https://github.com/zennur/ConversationalAI_SDV/assets/7806017/abd3d0f3-c75c-47e3-ab3c-1b06aa6f8a7d" width="50%"/>
 </p>
-  
+
+## Table of Content
+
+- [AttentiveAI](#attentiveai)
+  - [Table of Content](#table-of-content)
+  - [Problem Statement](#problem-statement)
+  - [Vision](#vision)
+  - [Future Directions](#future-directions)
+  - [Conceptual System Architecture](#conceptual-system-architecture)
+  - [Prerequistes](#prerequistes)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+
 ## Problem Statement
 
 AttentiveAI represents a cutting-edge integration of AI technologies with automotive safety systems, designed to redefine the driving experience. At its core, AttentiveAI leverages advanced machine learning algorithms, natural language processing, and computer vision to monitor driver attentiveness and provide interactive assistance. By ensuring that drivers remain focused and alert, AttentiveAI aims to significantly reduce the risk of accidents caused by distractions.
@@ -15,6 +28,13 @@ AttentiveAI aims to gamify driver experience and ensure road safety by embedding
 
 ## Future Directions
 The project envisions expanding its capabilities to include predictive accident avoidance, integration with smart city infrastructure for optimized routing, and enhanced personalization features that adapt to each driver's unique preferences and driving patterns. AttentiveAI is not just a project; it's a commitment to safer, smarter, and more connected driving experiences.
+
+## Conceptual System Architecture
+
+<p align=center>
+<img src="doc/architecture.png" width="90%"/>
+</p>
+
 
 
 ## Prerequistes
