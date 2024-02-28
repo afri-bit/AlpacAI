@@ -68,6 +68,29 @@ source .venv/bin/activate
 
 ## Usage
 
+```shell
+# Available commands
+convagent --help
+  usage: AttentiveAI [-h] [-vip VEHICLE_IP] [-vp VEHICLE_PORT] [-s] [-cp CONFIG_PATH]
+  
+  Intelligent driver drowsiness avoidance with GenAI
+  
+  options:
+    -h, --help            show this help message and exit
+    -vip VEHICLE_IP, --vehicle_ip VEHICLE_IP
+                          IP address to the vehicle interface communication
+    -vp VEHICLE_PORT, --vehicle_port VEHICLE_PORT
+                          Port communication to the vehicle
+    -s, --simulation      Simulation Mode ON
+    -cp CONFIG_PATH, --config_path CONFIG_PATH
+                          Path to JSON file
+
+# Subscribe to KuksaVal and activate Conversation Agent to assist the driver
+convagent -vip <IP_addr> -vp <Port>
+
+# Run simulation from sample JSON
+convagent -s
+
 ## License
 
 AlpacAI
