@@ -1,7 +1,7 @@
 import vertexai
 import vertexai.preview.generative_models as generative_models
 from google.cloud import aiplatform
-from textToSpeech import text_to_speech
+from alpacai.core.genai.text_to_speech import text_to_speech
 from vertexai.preview.generative_models import GenerativeModel
 
 
