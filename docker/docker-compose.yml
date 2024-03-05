@@ -1,10 +1,9 @@
 version: "3.8"
 
 services:
-  kuksa:
+  alpacai:
     build:
       dockerfile: Dockerfile
       context: .
-    ports:
-      - 55555:55555
-    network_mode: "host"
+    platform: linux/amd64
+    container_name: alpacai-devenv
