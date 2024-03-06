@@ -104,7 +104,7 @@ sdv.databroker.v1 > help
 
 With this, you are now able to communicate with the data broker to manipulate or read data.
 
-Step 5: Run the Core AlpacAI Container
+### Step 5: Run the Core AlpacAI Container
 
 > Assuming you are still inside the `docker` folder
 
