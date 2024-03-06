@@ -2,6 +2,9 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV USER_NAME=alpaca
+ENV USER_PASSWORD=${USER_NAME}
+
 RUN apt update \
     && apt install -y \
     locales \
@@ -32,3 +35,20 @@ RUN apt update \
     &&  apt install -y \
     ros-dev-tools \
     ros-iron-desktop
+
+# Create a non-root user with sudo privileges
+RUN useradd -m -s /bin/bash "${USER_NAME}" && \
+    echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && \
+    usermod -aG sudo "${USER_NAME}"
+
+USER ${USER_NAME}
+
+# Set the working directory
+WORKDIR /home/${USER_NAME}
+
+# Setup ROS environment
+RUN echo 'source /opt/ros/iron/setup.sh' >> $HOME/.bashrc
+
+# Install rust 
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
+    && echo 'source $HOME/.cargo/env' >> $HOME/.bashrc

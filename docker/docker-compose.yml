@@ -7,3 +7,5 @@ services:
       context: .
     platform: linux/amd64
     container_name: alpacai-devenv
+
+    
