@@ -1,0 +1,14 @@
+{
+    "image": "alpacai-dev-env:0.1.0",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "serayuzgur.crates",
+                "dustypomerleau.rust-syntax",
+                "ms-python.debugpy",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    }
+}

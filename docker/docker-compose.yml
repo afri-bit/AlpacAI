@@ -2,6 +2,7 @@ version: "3.8"
 
 services:
   alpacai:
+    image: alpacai-dev-env:0.1.0
     build:
       dockerfile: Dockerfile
       context: .
@@ -9,6 +10,8 @@ services:
     container_name: alpacai-devenv
     networks:
       - alpaca_network
+    volumes:
+      - ../:/home/alpaca/ws
 
   kuksa_server:
     image: ghcr.io/eclipse/kuksa.val/databroker:master
