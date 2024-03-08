@@ -165,3 +165,7 @@ cython_debug/
 #*.json
 .DS_Store
 *.pyc
+
+build/
+install/
+log
