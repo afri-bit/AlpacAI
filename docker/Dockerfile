@@ -32,3 +32,5 @@ RUN apt update \
     &&  apt install -y \
     ros-dev-tools \
     ros-iron-desktop
+
+RUN curl -fsSL https://ollama.com/install.sh | sh
