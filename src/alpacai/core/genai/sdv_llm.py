@@ -1,8 +1,8 @@
-from alpacai.core.genai.text_to_speech import text_to_speech
+from alpacai.core.genai.text_to_speech import TextToSpeech
 import ollama
 
 
-def get_and_speak_response(input_text):
+def get_and_speak_response(tts: TextToSpeech, input_text: str):
     """Returns the speech of LLM response given the input text
 
     Args:
@@ -20,7 +20,7 @@ def get_and_speak_response(input_text):
     print(response_text)
 
     # Use TTS to speak out the response
-    text_to_speech(response_text)
+    tts.text_to_speech(response_text)
     return response_text
 
 

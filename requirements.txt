@@ -9,3 +9,5 @@ googlemaps
 pygame
 ultralytics
 ollama
+py3-tts
+pyttsx3
