@@ -7,3 +7,22 @@ services:
       context: .
     platform: linux/amd64
     container_name: alpacai-devenv
+    networks:
+      - alpaca_network
+
+  kuksa_server:
+    image: ghcr.io/eclipse/kuksa.val/databroker:master
+    container_name: kuksa_server
+    ports:
+      - 55555:55555
+    networks:
+      - alpaca_network
+
+  kuksa_client:
+    image: ghcr.io/eclipse/kuksa.val/databroker-cli:master
+    container_name: kuksa_client
+    networks:
+      - alpaca_network
+
+networks:
+  alpaca_network:
