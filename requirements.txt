@@ -1,10 +1,7 @@
-google-cloud-texttospeech
-google-cloud-speech
-google.cloud
+
 pyaudio
 simpleaudio
-vertexai
-google-cloud-aiplatform
+
 googlemaps
 pygame
 ultralytics
