@@ -4,8 +4,8 @@ import sys
 import time
 import json
 
-import googlemaps
 import pygame
+import requests
 from kuksa_client.grpc import VSSClient
 
 from alpacai.core.genai.sdv_llm import get_and_speak_response
@@ -157,28 +157,35 @@ def check_drowsiness(tts, attentiveness_score):
         warn_driver()
 
 
-def make_gps_suggestions(tts, lat, lng):
-    """Make suggestions of coffee shops around the driver's GPS location
+def make_gps_suggestions(tts, latitude, longitude, radius=1000):
+    """Find coffee shops around a given GPS location within a specified radius (in meters)."""
+    url = "https://nominatim.openstreetmap.org/search"
+    params = {
+        "q": "cafe",
+        "format": "json",
+        "limit": 10,  # Adjust based on how many results you want
+        "viewbox": f"{longitude - 0.01},{latitude + 0.01},{longitude + 0.01},{latitude - 0.01}",
+        "bounded": 1,
+    }
+    response = requests.get(url, params=params)
+    places_result = response.json()
 
-    Args:
-        lat (float): Latitude
-        lng (float): Longitude
-    """
-    gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
-
-    # Making a request to the Places API to find restaurants within 500 meters
-    places_result = gmaps.places_nearby(location=(lat, lng), radius=500, type="cafe")
-
+    for shop in places_result:
+        print(
+            f"Name: {shop.get('display_name')}\nLocation: {shop.get('lat')}, {shop.get('lon')}\n"
+        )
     # Parsing and printing the names of places found
-    for place in places_result["results"]:
-        print(place["name"])
+    for place in places_result:
+        print(place.get("display_name"))
 
-    place = random.choice(places_result["results"])
+    place = random.choice(places_result)
+    print(place)
     get_and_speak_response(
         tts,
         f"You are a car assistant and the driver is getting sleepy. \
-                            And you will recommend them a coffee shop. \
-                           The name of the coffee shop is {place}",
+        And you will recommend them a coffee shop. \
+        The name of the coffee shop is {place.get('display_name')}. \
+        Imagine you are speaking to the driver and only include that in the answer.",
     )
 
 

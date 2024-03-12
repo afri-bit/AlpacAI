@@ -10,7 +10,7 @@ def get_and_speak_response(tts: TextToSpeech, input_text: str):
     """
 
     response = ollama.chat(
-        model="gemma",
+        model="vicuna",
         messages=[
             {"role": "user", "content": input_text},
         ],
