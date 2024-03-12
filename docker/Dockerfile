@@ -33,6 +33,6 @@ RUN apt update \
     ros-dev-tools \
     ros-iron-desktop
 
-RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN sudo apt update && sudo apt install espeak ffmpeg libespeak1 -y
+RUN pip install ollama
 
-RUN sudo apt update && sudo apt install espeak ffmpeg libespeak1
