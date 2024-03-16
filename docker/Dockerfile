@@ -25,7 +25,10 @@ RUN apt update \
     curl \
     htop \
     git \
-    libclang-dev 
+    libclang-dev \
+    autoconf \
+    libtool \
+    pkg-config
 
 RUN locale-gen en_US en_US.UTF-8 \
     && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -53,19 +56,9 @@ USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
 
 # Update the pip version
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip \
+    && pip install kuksa-client
 
 # Setup ROS environment
-RUN echo 'source /opt/ros/iron/setup.sh' >> $HOME/.bashrc
-
-# ========== RUST Things (with ROS2) - USER level
-
-# Install rust 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
-    && echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
-
-RUN $HOME/.cargo/bin/cargo install cargo-ament-build  # --debug is faster to install
-
-# Cargo for ROS2
-RUN pip install git+https://github.com/colcon/colcon-cargo.git \
-    && pip install git+https://github.com/colcon/colcon-ros-cargo.git
+RUN echo 'source /opt/ros/iron/setup.sh' >> $HOME/.bashrc \
+    && echo 'export PATH=$PATH:$HOME/.local/bin' >> $HOME/.bashrc
