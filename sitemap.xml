@@ -2,47 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/afri-bit/AlpacAI/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-01-30</lastmod>
     </url>
     <url>
-         <loc>https://github.com/afri-bit/AlpacAI/insides/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://github.com/afri-bit/AlpacAI/problem-statement/</loc>
+         <lastmod>2025-01-30</lastmod>
     </url>
     <url>
-         <loc>https://github.com/afri-bit/AlpacAI/insides/problem-statement/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/insides/vision/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/insides/who-we-are/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/system/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/system/architecture/function-architecture/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/system/architecture/System-Architecture/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://github.com/afri-bit/AlpacAI/system/architecture/System-Architecture/ee-architecture/</loc>
-         <lastmod>2024-08-22</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://github.com/afri-bit/AlpacAI/vision/</loc>
+         <lastmod>2025-01-30</lastmod>
     </url>
 </urlset>
