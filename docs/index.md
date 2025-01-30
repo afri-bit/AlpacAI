@@ -1,121 +1,178 @@
----
-title: Home
----
-
-# AlpacAI
-
-<p align=center>
-<img src="https://github.com/zennur/ConversationalAI_SDV/assets/7806017/abd3d0f3-c75c-47e3-ab3c-1b06aa6f8a7d" width="50%" style="border-radius:8%"/>
-</p>
-
-## Problem Statement
-
-AlpacAI represents a cutting-edge integration of AI technologies with automotive safety systems, designed to redefine the driving experience. At its core, AlpacAI leverages advanced machine learning algorithms, natural language processing, and computer vision to monitor driver attentiveness and provide interactive assistance. By ensuring that drivers remain focused and alert, AlpacAI aims to significantly reduce the risk of accidents caused by distractions.
-
-## Vision
-
-AlpacAI aims to gamify driver experience and ensure road safety by embedding intelligence and attentiveness into every journey. By combining AI's predictive capabilities with real-time monitoring and intervention, AlpacAI not only makes driving safer but also more enjoyable and engaging. It represents a significant step forward in our journey towards fully autonomous vehicles, offering a glimpse into the future of intelligent transportation systems.
-
-## Future Directions
-The project envisions expanding its capabilities to include predictive accident avoidance, integration with smart city infrastructure for optimized routing, and enhanced personalization features that adapt to each driver's unique preferences and driving patterns. AlpacAI is not just a project; it's a commitment to safer, smarter, and more connected driving experiences.
-
-## Conceptual System Architecture
-
-<p align=center>
-<img src="_assets/img/architecture.png" width="80%"/>
-</p>
-
-
-
-## Prerequistes
-
-### General
-* Linux Ubuntu 22.04
-* `python` > 3.10+
-* `gcloud` (See [gcloud installation](https://cloud.google.com/sdk/docs/install?hl=de#deb).)
-* `portaudio`  
-  ```commandline
-  sudo apt install portaudio19-dev python3-all-dev
-  ```
-
-### Development
-
-* Docker (Desktop)
-* Your favourite IDE
-* Your motivation :smiley:
-
-## Installation
-
-First thing to do is to clone our repository
-
-```shell
-# Clone the repository
-git clone https://github.com/afri-bit/AlpacaAI.git
-
-cd AlpacAI
-
-```
-
-### Environment
-
-Within this project we are providing you a isolated environment using Docker containerization technology. Make sure you have your Docker installed on your local machine, and follow the instruction below.
-
-```shell
-# Assuming you are already inside the project root folder
-
-cd docker
-
-# Building the docker image, in case you haven't
-docker compose build
-
-# Run the container
-docker compose run alpacai
-```
-
-### Application
-
-```shell
-# !!! Assuming you are inside the docker container and have the project folder mounted inside the container !!!
-
-# Setup the python virtual environment
-python -m venv .venv
-
-# Activate the virtual environment
-source .venv/bin/activate
-
-# Install the requirements
-(.venv) pip install -r requirements.txt
-
-# Install python package
-(.venv) pip install .
-```
-
-## Usage
-
-```shell
-# Available commands
-convagent --help
-  usage: AttentiveAI [-h] [-vip VEHICLE_IP] [-vp VEHICLE_PORT] [-s] [-cp CONFIG_PATH]
+<style>
+  /* Reset some default styles */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
   
-  Intelligent driver drowsiness avoidance with GenAI
-  
-  options:
-    -h, --help            show this help message and exit
-    -vip VEHICLE_IP, --vehicle_ip VEHICLE_IP
-                          IP address to the vehicle interface communication
-    -vp VEHICLE_PORT, --vehicle_port VEHICLE_PORT
-                          Port communication to the vehicle
-    -s, --simulation      Simulation Mode ON
-    -cp CONFIG_PATH, --config_path CONFIG_PATH
-                          Path to JSON file
+  /* Ensure full width content */
+  .md-content__inner {
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
 
-# Subscribe to KuksaVal and activate Conversation Agent to assist the driver
-convagent -vip <IP_addr> -vp <Port>
+  section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box;
+  }
 
-# Run simulation from sample JSON
-convagent -s
-```
+  .content {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+  }
 
-## License
+  #hero {
+    background-image: url('assets/images/alpaca_bg.png');
+  }
+  #features {
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  }
+  #vision {
+    background-image: url('https://images.unsplash.com/photo-1535868463750-c78d9543614f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  }
+  #problem-statement {
+    background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  }
 
-AlpacAI
+  h1, h2 {
+    color: #FFFFFF;
+  }
+
+  ul {
+    text-align: left;
+    margin: auto%;
+    padding-left: 40%;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .md-button {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+
+  .md-button:hover {
+    background-color: #2980b9;
+  }
+
+  .md-button--primary {
+    background-color: #e74c3c;
+  }
+
+  .md-button--primary:hover {
+    background-color: #c0392b;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .feature-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 1rem;
+    }
+    .content {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<section id="hero">
+  <div class="content">
+    <h2>Welcome to AlpacAI</h2>
+    <p>AlpacAI represents a cutting-edge integration of AI technologies with automotive safety systems, designed to redefine the driving experience. Our mission is to make driving safer, more enjoyable, and more intelligent through the power of artificial intelligence.</p>
+    <div class="cta-buttons">
+      <a href="{{ 'installation/prerequisites/' | url }}" class="md-button md-button--primary">Get Started with Installation</a>
+      <a href="{{ 'vision/' | url }}" class="md-button">Learn More About Our Vision</a>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="content">
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>Advanced Driver Monitoring</h3>
+        <p>Leveraging computer vision to ensure driver attentiveness.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Interactive Assistance</h3>
+        <p>Natural language processing for intuitive driver communication.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Predictive Accident Avoidance</h3>
+        <p>Machine learning algorithms to anticipate and prevent potential accidents.</p>
+      </div>
+      <div class="feature-item">
+        <h3>Smart City Integration</h3>
+        <p>Connecting with urban infrastructure for optimized routing and enhanced safety.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="content">
+    <h2>Our Vision</h2>
+    <p>At AlpacAI, we envision a future where driving is not just safer, but also more enjoyable and seamlessly integrated with artificial intelligence. We're driving towards a future where every journey is safe, efficient, and enjoyable, powered by the intelligent fusion of human insight and artificial intelligence.</p>
+    <div class="cta-buttons">
+      <a href="{{ 'vision/' | url }}" class="md-button md-button--primary">Explore Our Full Vision</a>
+    </div>
+  </div>
+</section>
+
+<section id="problem-statement">
+  <div class="content">
+    <h2>Problem Statement</h2>
+    <p>AlpacAI addresses critical issues in automotive safety:</p>
+    <ul>
+      <li>Driver distraction and fatigue remain leading causes of road accidents.</li>
+      <li>Information overload from multiple vehicle systems can itself become a source of distraction.</li>
+      <li>Many current safety systems are reactive rather than proactive.</li>
+      <li>There's untapped potential in using AI to create more intelligent, adaptive, and personalized safety systems.</li>
+    </ul>
+    <div class="cta-buttons">
+      <a href="{{ 'problem-statement/' | url }}" class="md-button md-button--primary">Read Full Problem Statement</a>
+    </div>
+  </div>
+</section>
